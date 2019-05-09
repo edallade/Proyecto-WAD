@@ -10,6 +10,8 @@
 <action name="Login" method="execute" class="actionsupportpackage.LoginActionSupport">
 <result name="success" >output1.jsp</result>
 <result name="input" >input1.jsp</result>
+<result name="profesor">profesor.jsp</result>
+
 </action>
 </package>
 </struts>

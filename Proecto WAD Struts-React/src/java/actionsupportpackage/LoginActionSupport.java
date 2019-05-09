@@ -11,6 +11,8 @@ public class LoginActionSupport extends ActionSupport {//esta clase es un java b
     //action suport se usa interfaz serializable 
     //tambien para usar las constantes ya definidas de la clase 
  private String userName,password;
+     private String tipo;
+    private String idLogin;
  Session hibernateSession;
  Login login;//manipula objeto que maneja tabla de la BD
  @Override
@@ -26,7 +28,7 @@ public class LoginActionSupport extends ActionSupport {//esta clase es un java b
     if(userName!=null && password!=null &&(!userName.equals(""))&&(!password.equals(""))){
         //recuperamos datos de la base de datos con la sesion de hibernet 
         //hibernet majea hql lenguaje de consultas de hibernet 
-     login=(Login) hibernateSession.createQuery("from Login where userName='"+userName+"'AND password='"+password+"'").uniqueResult();
+     login=(Login) hibernateSession.createQuery("from Login where id='"+userName+"'AND password='"+password+"'").uniqueResult();
      }
     else{
      addActionError("User Name does not exist");
@@ -37,8 +39,25 @@ public class LoginActionSupport extends ActionSupport {//esta clase es un java b
     addActionError("User Name does not exist");
      return INPUT;
      }
- addActionMessage("Welcome you logined");
- return SUCCESS;
+ 
+ 
+        
+                 tipo = login.getType();
+ System.out.println(tipo);
+        if (tipo.equals("1")) {
+            return "administrador";
+        }
+        if (tipo.equals("2")) {
+            
+            return "profesor";
+        }
+        if (tipo.equals("3")) {
+            return "alumno";
+        }
+        return "output1";
+    
+ /*addActionMessage("Welcome you logined");
+ return SUCCESS;*/
  }
  
  public String getPassword() {

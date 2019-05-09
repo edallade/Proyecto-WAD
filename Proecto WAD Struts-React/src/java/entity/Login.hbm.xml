@@ -1,18 +1,21 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 7/05/2019 10:26:21 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 9/05/2019 03:10:06 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="entity.Login" table="login" catalog="test" optimistic-lock="version">
-        <id name="idLogin" type="int">
-            <column name="idLOGIN" />
-            <generator class="assigned" />
+    <class name="entity.Login" table="login" catalog="testselect" optimistic-lock="version">
+        <id name="idUser" type="java.lang.Integer">
+            <column name="idUser" />
+            <generator class="identity" />
         </id>
-        <property name="username" type="string">
-            <column name="USERNAME" length="45" />
+        <property name="id" type="string">
+            <column name="id" length="10" not-null="true" />
         </property>
         <property name="password" type="string">
-            <column name="PASSWORD" length="45" />
+            <column name="password" length="10" not-null="true" />
+        </property>
+        <property name="type" type="string">
+            <column name="type" length="10" not-null="true" />
         </property>
     </class>
 </hibernate-mapping>

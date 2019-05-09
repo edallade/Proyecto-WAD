@@ -1,5 +1,5 @@
 package entity;
-// Generated 7/05/2019 10:26:19 PM by Hibernate Tools 4.3.1
+// Generated 9/05/2019 03:10:03 PM by Hibernate Tools 4.3.1
 
 
 
@@ -9,36 +9,33 @@ package entity;
 public class Login  implements java.io.Serializable {
 
 
-     private int idLogin;
-     private String username;
+     private Integer idUser;
+     private String id;
      private String password;
+     private String type;
 
     public Login() {
     }
 
-	
-    public Login(int idLogin) {
-        this.idLogin = idLogin;
-    }
-    public Login(int idLogin, String username, String password) {
-       this.idLogin = idLogin;
-       this.username = username;
+    public Login(String id, String password, String type) {
+       this.id = id;
        this.password = password;
+       this.type = type;
     }
    
-    public int getIdLogin() {
-        return this.idLogin;
+    public Integer getIdUser() {
+        return this.idUser;
     }
     
-    public void setIdLogin(int idLogin) {
-        this.idLogin = idLogin;
+    public void setIdUser(Integer idUser) {
+        this.idUser = idUser;
     }
-    public String getUsername() {
-        return this.username;
+    public String getId() {
+        return this.id;
     }
     
-    public void setUsername(String username) {
-        this.username = username;
+    public void setId(String id) {
+        this.id = id;
     }
     public String getPassword() {
         return this.password;
@@ -46,6 +43,13 @@ public class Login  implements java.io.Serializable {
     
     public void setPassword(String password) {
         this.password = password;
+    }
+    public String getType() {
+        return this.type;
+    }
+    
+    public void setType(String type) {
+        this.type = type;
     }
 
 
