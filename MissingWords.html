@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Creador de preguntas Missing Words</title>
+</head>
+
+<body>
+
+    <p>Oprima el botón después de escribir el mensaje.</p>
+    <img src="MissingWordsSample.png" />
+
+    <br><br>Nombre de la Pregunta:<br><input type="text" id="title" name="txt" style="WIDTH: 350px; HEIGHT: 20px" />
+
+    <br><br>Enunciado de la Pregunta:<br><input type="text" id="txt" name="txt" style="WIDTH: 350px; HEIGHT: 50px" />
+
+    <button onclick="myFunction()">Listo</button>
+    <button onclick="LimpiarInput()">Limpiar</button>
+
+    <!--Aquí se despliega el enunciado con cada uno de los inputs-->
+    <p id="sel"></p>
+
+    <!--Aquí se pone el enunciado con la información recuperada de los inputs, se pone en un selector-->
+    <p id="final"></p>
+
+    <!--Ponemos la calificación-->
+    <p id="calificacion"></p>
+
+    <script>
+        var title, txt, res, tamRes, selMV, AuxData, auxSelect, finalMV, calificacionMV;
+        var ArrayData = []
+        var RandList = []
+        var auxSelectArray = []
+        var selectMWArray = []
+        function myFunction() {
+            title = ""
+            //Recuperamos el valor del elemento (input type text) y lo guardamos en las variables
+            title = document.getElementById('title').value;
+            txt = document.getElementById('txt').value;
+            //var str = "& Esto es un & del & de WAD para el & de Said";
+            res = txt.split("&");
+            tamRes = res.length;
+            console.log("Tamaño del arreglo: ", tamRes, " Arreglo: ", res);
+            selMV = "";
+            //selMV es donde vamos a juntar el enunciado con los inputs
+
+            title = "<h1>" + title + "</h1>"
+
+            //Agregamos el título a selMV
+            selMV = "" + title
+
+            if (txt == "") {
+                alert("Ingresa una cadena por favor!");
+            } else {
+                //En este for vamos a imprimir el enunciado con los input 
+                for (var i = 0; i < tamRes - 1; i++) {
+                    selMV += res[i] + "<input type='text' id='input" + (i + 1) + "' name='input" + (i + 1) + "'/> ";
+                }
+                selMV += res[tamRes - 1] + "<br><button onClick='GuardarDatos()'>Guardar</button>";
+                //Aquí le pasamos la información de "selMV" a nuestro elemento <p id="sel"></p>
+                document.getElementById("sel").innerHTML = selMV;
+                console.log("Texto con los inputs:", selMV);
+            }
+        }
+
+        //Esta función limpia todo
+        function LimpiarInput() {
+            document.getElementById('title').value = ""
+            title = ""
+            document.getElementById('txt').value = "";
+            selMV = "";
+            document.getElementById("sel").innerHTML = selMV;
+            finalMV = "";
+            document.getElementById("final").innerHTML = finalMV;
+            calificacionMV = ""
+            document.getElementById("calificacion").innerHTML = calificacionMV;
+        }
+
+        function GuardarDatos() {
+            auxSelect = "";
+            auxSelectArray = []
+            finalMV = "";
+            RandList = []
+            ArrayData = []
+            document.getElementById('final').value = "";
+            for (var i = 0; i < tamRes - 1; i++) {
+                //var auxInput es un auxiliar para recuperar el valor de cada input generado anteriormente
+                var auxInput = "input" + (i + 1);
+                //document.getElementById(auxInput).value; nos recupera el valor del input que esta en ese momento y los metemos en AuxData
+                //para después meterlo en un arreglo llamado ArrayData que contiene todo los datos recuperados de los inputs 
+                AuxData = document.getElementById(auxInput).value;
+                ArrayData.push(AuxData); //metemos los datos de AuxData (Información de cada input) en el arreglo ArrayData
+                RandList.push(i); //Para generar los números random, metemos del 0 hasta n, dependiendo de los inputs que tengamos
+            }
+            console.log("ArrayMissingWords: ", ArrayData)
+            ArrayData.forEach(function (data, index, err) {
+                //Aquí genero una lista con números random del 0 a n 
+                RandList = RandList.sort(function () { return Math.random() - 0.5 });
+                console.log(index, "Random: " + RandList);
+                //los id de cada select van a ir de 1 hasta n, para más adelante poder saber las respuestas correctas
+                //Por default ponemos <option>Selecciona...</option> en el primer lugar
+                auxSelect = "<select id='" + (index + 1) + "' name='" + (index + 1) + "'><option>Selecciona...</option>";
+                //Este for nos ayuda a poner las opciones del selector en desorden
+                RandList.forEach(function (randNum, i, error) {
+                    console.log(index, randNum, i);
+                    var aux1 = RandList[i]; //aux1, toma el valor[i] del arreglo de números random, y nos da un número de 0 a n
+                    var auxS = ArrayData[aux1]; //auxS, toma el valor[aux1] del arreglo de la información obtenida en cada input
+                    auxSelect += "<option value='" + aux1 + "'>" + auxS + "</option>";
+                })
+                auxSelect += "</select>";
+                //auxSelectArray, es un arreglo porque necesitamos que todos los select, tengan un orden diferente en sus opciones
+                //Por lo tanto, hacemos este paso n veces dependiendo del número de selects que tengamos
+                auxSelectArray.push(auxSelect);
+            });
+            console.log("auxSelectArray: ", auxSelectArray)
+            finalMV = "" + title
+            auxSelectArray.forEach(function (element, i) {
+                //Aquí juntamos el enunciado pero ahora le ponemos los selectores, siendo res[] el arreglo donde guardamos el enunciado
+                //y element cada select guardado previamente en auxSelectArray
+                finalMV += res[i] + element 
+            })
+            finalMV += res[tamRes - 1] + "<br><button onClick='Contestar()'>Contestar</button>";
+            //Aquí le pasamos la información de "finalMV" a nuestro elemento <p id="final"></p>
+            document.getElementById("final").innerHTML = finalMV;
+        }
+
+        function Contestar(arr1, arr2) {
+            calificacionMV = ""
+            selectMWArray = []
+            var selectMW = []
+            for (var i = 0; i < tamRes - 1; i++) {
+                //En este for recuperamos los valores de las respuestas de cada select y los metemos a selectMWArray[]
+                var selectMW =
+                {
+                    index: (i + 1),
+                    value: document.getElementById("" + (i + 1)).value
+                }
+                selectMWArray.push(selectMW);
+            }
+            var contCorrect = 0
+            var totalCalif = 0
+
+            selectMWArray.forEach(function (selectm, index) {
+                index = index + 1
+                selectm.index = selectm.index - 1
+                //Aquí comparamos, si el select con "id = 1" tiene como respuesta el "valor = 0", es correcto
+                //Nuestra lógica es la siguiente: "id = n" debe tener como respuesta el "valor = n - 1"
+                if (selectm.index != selectm.value) {
+                    console.log("Respuesta Incorrecta", index)
+                } else {
+                    contCorrect++;
+                }
+            })
+            totalCalif = (contCorrect / (tamRes - 1)) * 10
+
+            console.log(selectMWArray)
+            calificacionMV = "Calificación: " + totalCalif
+            if (totalCalif <= 5) {
+                alert("Mal, sigue estudiando! ")
+            } else if (totalCalif <= 7) {
+                alert("Casi lo logras, sigue estudiando! ")
+            } else if (totalCalif <= 9) {
+                alert("Estás cerca de lograrlo, sigue estudiando!")
+            } else if (totalCalif == 10) {
+                alert("Excelente!")
+            }
+            //Aquí le pasamos la información de "calificacionMV" a nuestro elemento <p id="calificacion"></p>
+            document.getElementById("calificacion").innerHTML = calificacionMV;
+        }
+    </script>
+
+</body>
+
+</html>
