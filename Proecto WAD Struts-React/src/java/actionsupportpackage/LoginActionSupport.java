@@ -2,12 +2,14 @@ package actionsupportpackage;
 
 import static com.opensymphony.xwork2.Action.INPUT;
 import static com.opensymphony.xwork2.Action.SUCCESS;
+import javax.servlet.http.HttpServletRequest;
+import org.apache.struts2.ServletActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import entity.Login; 
 import entity.HibernateUtil;
 import org.hibernate.Session;
 
-public class LoginActionSupport extends ActionSupport {//esta clase es un java bean, sus atributos tienen setter y getter
+public class LoginActionSupport extends ActionSupport  {//esta clase es un java bean, sus atributos tienen setter y getter
     //action suport se usa interfaz serializable 
     //tambien para usar las constantes ya definidas de la clase 
  private String userName,password;
@@ -17,6 +19,7 @@ public class LoginActionSupport extends ActionSupport {//esta clase es un java b
  Login login;//manipula objeto que maneja tabla de la BD
  @Override
  public String execute() throws Exception {
+     HttpServletRequest request = ServletActionContext.getRequest();
      System.out.println(userName+"+++++++++++++++++++++++++++++++++++++++++++++");
      //recuperar sesion de hibernet siempre 
  hibernateSession=HibernateUtil.getSessionFactory().openSession();
@@ -28,7 +31,7 @@ public class LoginActionSupport extends ActionSupport {//esta clase es un java b
     if(userName!=null && password!=null &&(!userName.equals(""))&&(!password.equals(""))){
         //recuperamos datos de la base de datos con la sesion de hibernet 
         //hibernet majea hql lenguaje de consultas de hibernet 
-     login=(Login) hibernateSession.createQuery("from Login where id='"+userName+"'AND password='"+password+"'").uniqueResult();
+     login=(Login) hibernateSession.createQuery("from Login where username='"+userName+"'AND password='"+password+"'").uniqueResult();
      }
     else{
      addActionError("User Name does not exist");
@@ -40,9 +43,8 @@ public class LoginActionSupport extends ActionSupport {//esta clase es un java b
      return INPUT;
      }
  
- 
-        
                  tipo = login.getType();
+                 request.getSession().setAttribute("sesionusuario", userName);
  System.out.println(tipo);
         if (tipo.equals("1")) {
             return "administrador";

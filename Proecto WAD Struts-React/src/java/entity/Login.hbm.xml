@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 9/05/2019 03:10:06 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 08-abr-2019 20:45:14 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="entity.Login" table="login" catalog="testselect" optimistic-lock="version">
-        <id name="idUser" type="java.lang.Integer">
-            <column name="idUser" />
+        <id name="idLogin" type="java.lang.Integer">
+            <column name="idLogin" />
             <generator class="identity" />
         </id>
-        <property name="id" type="string">
-            <column name="id" length="10" not-null="true" />
+        <property name="username" type="string">
+            <column name="username" length="10" not-null="true" />
         </property>
         <property name="password" type="string">
             <column name="password" length="10" not-null="true" />
