@@ -22,14 +22,11 @@
       return(
               <div>
       <form  action="Login" method="post">
-         Name: <    input  type="text" name="userName"/>Password:
+         Name: <input  type="text" name="userName"/>Password:
               
                   <input type="password" name="password"  />
           
-
-             d5
-            
-         <input type="submit" value="login2" ></input>
+         <input type="submit" value="Ingresar" ></input>
          </form>
          </div>
       );

@@ -13,8 +13,8 @@ public class LoginActionSupport extends ActionSupport  {//esta clase es un java 
     //action suport se usa interfaz serializable 
     //tambien para usar las constantes ya definidas de la clase 
  private String userName,password;
-     private String tipo;
-    private String idLogin;
+ private String tipo;
+ private String idLogin;
  Session hibernateSession;
  Login login;//manipula objeto que maneja tabla de la BD
  @Override
