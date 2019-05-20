@@ -22,6 +22,7 @@
       return(
               
         <div id="texto">
+        <a href="crearExamen.jsp"><button>Crear Examen</button></a>
         <form action="eliminarEjercicio" method="post">
         <table id="tablad" border="1"></table>
         </form>

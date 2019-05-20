@@ -42,9 +42,11 @@ public class LoginActionSupport extends ActionSupport  {//esta clase es un java 
     addActionError("User Name does not exist");
      return INPUT;
      }
- 
+ //Recuperams el id del usuario para más adelante usarlo
+        idLogin = login.getIdLogin().toString();
                  tipo = login.getType();
                  request.getSession().setAttribute("sesionusuario", userName);
+                 request.getSession().setAttribute("userID", idLogin);
  System.out.println(tipo);
         if (tipo.equals("1")) {
             return "administrador";

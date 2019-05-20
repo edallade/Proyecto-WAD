@@ -10,11 +10,7 @@
     
     componentDidMount ()  {
        
-  fetch('http://localhost:8080/LOGINSTRUTS2HIBERNATE_GOOD/Ejer1cicios.xml')
-  .then(response => response.text())
-  
-  .then(str => (new  window.DOMParser()).parseFromString(str, "text/xml"))
-  .then(data => console.log(data.getElementsByTagName("test")));
+
   
 }
   
@@ -22,7 +18,9 @@
       return(
               
         <div id="texto">
+        <a href="crearExamen.jsp"><button>Crear Pregunta</button></a>
         <form action="eliminarEjercicio" method="post">
+        
         <table id="tablad" border="1"></table>
         </form>
          </div>

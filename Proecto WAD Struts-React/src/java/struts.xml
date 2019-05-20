@@ -18,5 +18,10 @@
             <result name="input" >input1.jsp</result>
             <result name="examenprofesor">profesor.jsp</result>
         </action>
+        <action name="crearExamen" method="execute" class="actionsupportpackage.crearExamen">
+            <result name="success" >output1.jsp</result>
+            <result name="input" >input1.jsp</result>
+            <result name="crearexamen">examenProfesor.jsp</result>
+        </action>
     </package>
 </struts>
