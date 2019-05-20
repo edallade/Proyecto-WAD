@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package actionsupportpackage;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -17,13 +12,14 @@ import org.jdom2.Element;
 import org.jdom2.input.SAXBuilder;
 import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
+
 public class crearExamen extends ActionSupport {
-    
+
     public crearExamen() {
     }
-    
+
     public String execute() throws Exception {
-         HttpServletRequest request = ServletActionContext.getRequest();
+        HttpServletRequest request = ServletActionContext.getRequest();
         String xml = request.getSession().getServletContext().getRealPath("/");
         String[] idTest = request.getParameterValues("Seleccionado");
         String ExamenN = (String) request.getParameter("nombre");
@@ -62,7 +58,7 @@ public class crearExamen extends ActionSupport {
                 id = "" + id2;//para ultimo id
             }
 
-            grupoP.setAttribute("groupID", id);
+            grupoP.setAttribute("quizID", id);
             grupoP.setAttribute("teacherID", idUsuario);
             nombreG.setText(ExamenN);//setText lo que va entre etiqueta de apertura y cierre
             List lista = QuestionWriter.getChildren("test");
@@ -73,7 +69,7 @@ public class crearExamen extends ActionSupport {
                 Element element = (Element) lista.get(i);//guarda los datos de la lista en un arreglo de elementos
                 //encontrar el elemento con el id capturado
                 Attribute idT = element.getAttribute("id");
-                
+
             }
 
             //Agregar contenido de los elementos a nodo padre (user)
@@ -102,5 +98,5 @@ public class crearExamen extends ActionSupport {
         }
         return "crearexamen";
     }
-    
+
 }

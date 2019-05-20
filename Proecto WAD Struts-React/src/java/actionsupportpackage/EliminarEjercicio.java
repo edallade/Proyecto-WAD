@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package actionsupportpackage;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -27,15 +22,10 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-/**
- *
- * @author i5-6500
- */
 public class EliminarEjercicio extends ActionSupport {
+
     private String idRef;
 
-    
-    
     @Override
     public String execute() throws Exception {
         HttpServletRequest request = ServletActionContext.getRequest();
@@ -44,9 +34,9 @@ public class EliminarEjercicio extends ActionSupport {
         xml = xml.replaceAll("/build", "");
         xml = xml.concat("EjerciciosX.xml");
         File xmlFile = new File(xml);
-        idRef= request.getParameter("idRef");
+        idRef = request.getParameter("idRef");
         int idU = Integer.parseInt(idRef);
-        
+
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder;
         try {
@@ -66,11 +56,10 @@ public class EliminarEjercicio extends ActionSupport {
         } catch (SAXException | IOException | ParserConfigurationException ex) {
             Logger.getLogger(EliminarEjercicio.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
+
         return "examenprofesor";
     }
-    
+
     private void deleteElement(Document doc, int id) {
         NodeList list = doc.getElementsByTagName("test");
         for (int i = 0; i < list.getLength(); i++) {
@@ -87,7 +76,7 @@ public class EliminarEjercicio extends ActionSupport {
             }
         }
     }
-    
+
     public String getIdRef() {
         return idRef;
     }
@@ -95,5 +84,5 @@ public class EliminarEjercicio extends ActionSupport {
     public void setIdRef(String idRef) {
         this.idRef = idRef;
     }
-    
+
 }

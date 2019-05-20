@@ -7,16 +7,16 @@
         <title>Login</title>
     </head>
     <body>
-   <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin=""></script>
-   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin=""></script>
-     <script src="https://unpkg.com/babel-standalone@6/babel.min.js" crossorigin=""></script>
+        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin=""></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin=""></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js" crossorigin=""></script>
     <body>
 
-            <div id="app"></div>
-            <div id="contenido"></div>
-         <script  type="text/babel" src="like_button.jsx">
-            
-               
-         </script>
+        <div id="app"></div>
+        <div id="contenido"></div>
+        <script  type="text/babel" src="like_button.jsx">
+
+
+        </script>
     </body>
 </html>
