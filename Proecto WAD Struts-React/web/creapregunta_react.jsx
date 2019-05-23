@@ -54,7 +54,7 @@ class Component extends React.Component{
  
         return (
         <div id="texto">
-        <form action="guarda" method="get">
+        <form action="guarda" method="post">
         <br></br>Nombre de la Pregunta:<br></br><input type="text" id="title" name="txt"  />
         <br></br>Enunciado de la Pregunta:<br></br><textarea type="text" id="txt" name="txt2" cols="50" rows="20" ></textarea>
 

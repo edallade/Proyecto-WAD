@@ -22,4 +22,24 @@
       </opciones>
     </grupo>
   </pregunta>
+  <pregunta idpreg="2">
+    <nombre>uno2</nombre>
+    <texto>jaskdfh &amp; lksjaldksj &amp;</texto>
+    <grupo idgroup="1">
+      <opciones>
+        <op1>asdasd</op1>
+        <op2>asdasd</op2>
+        <op3>asdasd</op3>
+        <op4>1111</op4>
+      </opciones>
+    </grupo>
+    <grupo idgroup="2">
+      <opciones>
+        <op1>alexislaradelgado@gmail.com</op1>
+        <op2>33333333</op2>
+        <op3>3333333333</op3>
+        <op4>333333333333</op4>
+      </opciones>
+    </grupo>
+  </pregunta>
 </Data>

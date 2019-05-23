@@ -23,5 +23,10 @@
             <result name="input" >input1.jsp</result>
             <result name="crearexamen">examenProfesor.jsp</result>
         </action>
+          <action name="guarda" method="execute" class="actionsupportpackage.guardaPreg">
+            <result name="profesor" >crea.jsp</result>
+            
+        </action>
+        
     </package>
 </struts>
