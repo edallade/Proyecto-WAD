@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>JSP  Page</title>
     </head>
     <body>
            <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin=""></script>

@@ -22,7 +22,7 @@ class Muestra extends React.Component{
     render(){
         return(
                 <div id="uno">
-                <p>hola</p>
+                <p>hola 2</p>
                 </div>
                 );
         
