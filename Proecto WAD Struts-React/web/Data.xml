@@ -42,4 +42,24 @@
       </opciones>
     </grupo>
   </pregunta>
+  <pregunta idpreg="3">
+    <nombre>Prueba2</nombre>
+    <texto>Prueba</texto>
+  </pregunta>
+  <quiz quizID="1" teacherID="2">
+        <name>Primer Examen</name>
+        <testID>1</testID>
+        <testID>2</testID>
+        <testID>3</testID>
+    </quiz>
+    <quiz quizID="1" teacherID="2">
+        <name>Primer Examen</name>
+        <testID>1</testID>
+        <testID>2</testID>
+        <testID>3</testID>
+    </quiz>
+    <quiz quizID="2" teacherID="2">
+        <name>Prueba</name>
+        <testID>1</testID>
+    </quiz>
 </Data>

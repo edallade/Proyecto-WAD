@@ -44,11 +44,4 @@
         <name>Prueba</name>
         <testID>1</testID>
     </quiz>
-    <quiz quizID="3" teacherID="2">
-        <name>Prueba2</name>
-        <testID>1</testID>
-        <testID>2</testID>
-        <testID>3</testID>
-        <testID>5</testID>
-    </quiz>
 </MissingWords>

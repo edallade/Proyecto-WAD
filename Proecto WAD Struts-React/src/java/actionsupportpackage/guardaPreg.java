@@ -46,10 +46,10 @@ public class guardaPreg extends ActionSupport {
         
         try {
             SAXBuilder builder = new SAXBuilder();
-            String RealPath = request.getSession().getServletContext().getRealPath("/")+"Data.xml";
-            //RealPath = RealPath.replace("\\", "/");
+            String RealPath = request.getSession().getServletContext().getRealPath("/");
+            RealPath = RealPath.replace("\\", "/");
             RealPath = RealPath.replaceAll("/build", "");
-           // RealPath = RealPath.concat("Data.xml");
+            RealPath = RealPath.concat("Data.xml");
             System.out.println(RealPath);
             File build = new File(RealPath);
             

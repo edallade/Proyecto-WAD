@@ -1,3 +1,12 @@
+const style = {
+  background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+  borderRadius: 3,
+  border: 0,
+  color: 'white',
+  height: 48,
+  padding: '0 30px',
+  boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+};
 class MyComponent extends React.Component {
     constructor(props) {
         super(props);
@@ -10,20 +19,14 @@ class MyComponent extends React.Component {
 
     componentDidMount() {
 
-        fetch('http://localhost:8080/LOGINSTRUTS2HIBERNATE_GOOD/Ejercicios.xml')
-                .then(response => response.text())
-
-                .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
-                .then(data => console.log(data.getElementsByTagName("test")));
-
     }
 
     render() {
         return(
                 <div id="texto">
-                    <a href="crearExamen.jsp"><button>Crear Examen</button></a>
+                    <a href="crearExamen.jsp"><button style = {style}>Crear Examen</button></a>
                     <form action="eliminarEjercicio" method="post">
-                        <table id="tablad" border="1"></table>
+                        <table id="tablad" border="1" class="redTable"></table>
                     </form>
                 </div>
 
@@ -39,13 +42,13 @@ xhttp.onreadystatechange = function () {
         myFunction(this);
     }
 };
-xhttp.open("GET", "EjerciciosX.xml", true);
+xhttp.open("GET", "Data.xml", true);
 xhttp.send();
 
 function myFunction(xml) {
     var xmlDoc = xml.responseXML;
     var tests = xmlDoc.getElementsByTagName("quiz");
-    var tabla = "<tr><th>ID</th><th>Nombre</th><th>Ver Pregunta</th><th>Modificar Pregunta</th><th>Eliminar Pregunta</th></tr>";
+    var tabla = "<thead><tr><th>ID</th><th>Nombre</th><th>Ver Pregunta</th><th>Modificar Pregunta</th><th>Eliminar Pregunta</th></tr></thead>";
     for (var i = 0; i < tests.length; i++) {
         tabla += "<tr><td>";
         tabla += tests[i].getAttribute("quizID");

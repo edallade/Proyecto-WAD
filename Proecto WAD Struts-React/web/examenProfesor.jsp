@@ -5,6 +5,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login</title>
+        <link rel="stylesheet" type="text/css" href="css/tabla.css">
     </head>
     <body>
         <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin=""></script>

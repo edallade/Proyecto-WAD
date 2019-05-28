@@ -5,6 +5,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login</title>
+        <link rel="stylesheet" type="text/css" href="css/tabla.css">
     </head>
     <body>
         <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin=""></script>
@@ -13,7 +14,7 @@
     <body>
         <%String user = (String) request.getSession().getAttribute("sesionusuario");%>
         <h3>Profesor: <%=user%></h3>
-        <h1>Creación de Examenes</h1>
+        <h1>Creación de         Examenes</h1>
         <div id="app"></div>
         <div id="contenido"></div>
         <script  type="text/babel" src="tablaCrearExamen.jsx">
