@@ -36,8 +36,12 @@ public class guardaPreg extends ActionSupport {
         System.out.println(name);
         System.out.println(texto);
         //contCaracteres regresa el numero de palabras faltantes denotadas por cada "&"
+        
         cont = contCaracteres(texto,"&");
         System.out.println(cont);
+        String splitText [] = new String [cont+1];
+       splitText= texto.split("&");
+        System.out.println(splitText);
         for(int i = 1 ;i<=cont;i++){
             for(int j =1 ; j<5 ; j++){
                 System.out.println(request.getParameter("input"+i+"_"+j+" "));
@@ -85,7 +89,7 @@ public class guardaPreg extends ActionSupport {
                 pregunta.addContent(grupo);
                 grupo.addContent(opciones);
                 for(int j =1 ; j<5 ; j++){
-                    Element opt = new Element ("op"+Integer.toString(j));
+                    Element opt = new Element ("op");
                     opt.setText(request.getParameter("input"+i+"_"+j+" "));
                     opciones.addContent(opt);
                // System.err.println(request.getParameter("input"+i+"_"+j+" "));

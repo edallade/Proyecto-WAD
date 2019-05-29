@@ -3,42 +3,22 @@
 <Data>
   <examenes />
   <pregunta idpreg="1">
-    <nombre>sad</nombre>
-    <texto>asda&amp; jhasdh &amp;</texto>
+    <nombre>uno</nombre>
+    <texto>esto &amp; es un ejemssssplo &amp;  aaa</texto>
     <grupo idgroup="1">
       <opciones>
-        <op1>1</op1>
-        <op2>222223</op2>
-        <op3>4</op3>
-        <op4>dfgdf</op4>
+        <op>111</op>
+        <op>2</op>
+        <op>33</op>
+        <op>444</op>
       </opciones>
     </grupo>
     <grupo idgroup="2">
       <opciones>
-        <op1>77</op1>
-        <op2>7887</op2>
-        <op3>99</op3>
-        <op4>999</op4>
-      </opciones>
-    </grupo>
-  </pregunta>
-  <pregunta idpreg="2">
-    <nombre>uno2</nombre>
-    <texto>jaskdfh &amp; lksjaldksj &amp;</texto>
-    <grupo idgroup="1">
-      <opciones>
-        <op1>asdasd</op1>
-        <op2>asdasd</op2>
-        <op3>asdasd</op3>
-        <op4>1111</op4>
-      </opciones>
-    </grupo>
-    <grupo idgroup="2">
-      <opciones>
-        <op1>alexislaradelgado@gmail.com</op1>
-        <op2>33333333</op2>
-        <op3>3333333333</op3>
-        <op4>333333333333</op4>
+        <op>5555555</op>
+        <op>6</op>
+        <op>7</op>
+        <op>aweeeeeeeeeeeee</op>
       </opciones>
     </grupo>
   </pregunta>

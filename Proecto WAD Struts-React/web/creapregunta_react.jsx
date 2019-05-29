@@ -22,9 +22,9 @@ class Component extends React.Component{
     
     myFunction() {
         var title = ""
-        title = document.getElementById('title').value;
-        var txt = document.getElementById('txt').value;
-       var res = txt.split("&");
+        title = document.getElementById('title').value//obtener nombre de pregunta
+        var txt = document.getElementById('txt').value;//texto de la pregunta
+       var res = txt.split("&");//separar en un arreglo por partes el arreglo
      var    tamRes = res.length;
         console.log("Tamaño del arreglo: ", tamRes, " Arreglo: ", res);
        var  selMV = "";

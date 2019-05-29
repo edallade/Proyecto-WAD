@@ -10,6 +10,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP  Page</title>
+            <style>
+        div.p {border-style: groove;
+                border-width: 7px;}
+         </style>
     </head>
     <body>
            <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin=""></script>
@@ -17,7 +21,10 @@
      <script src="https://unpkg.com/babel-standalone@6/babel.min.js" crossorigin=""></script> 
      
      <div id="muestra">
-         
+     
      </div>
-     <script type="text/babel" src="creapregunta_react.jsx"></script>    </body>
+     <script type="text/babel" src="muestra_preg.jsx"></script>    </body>
+    <div id="prueba">
+        <script type="text/babel" src="prueba_subida_archivo.jsx"></script>
+    </div>
 </html>
