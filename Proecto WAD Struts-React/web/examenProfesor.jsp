@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Login</title>
+        <title>Exámenes</title>
         <link rel="stylesheet" type="text/css" href="css/fondos.css"/>
     </head>
     <body>
@@ -14,7 +14,7 @@
     <body>
         <%String user = (String) request.getSession().getAttribute("sesionusuario");%>
         <h3>Profesor: <%=user%></h3>
-        <h1>Creación de Exámenes</h1>
+        <h1>Exámenes</h1>
         <div id="app"></div>
         <div id="contenido"></div>
         <script  type="text/babel" src="tablaExamenes.jsx">
