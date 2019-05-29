@@ -55,8 +55,8 @@ class Component extends React.Component{
         return (
         <div id="texto">
         <form action="guarda" method="post">
-        <br></br>Nombre de la Pregunta:<br></br><input type="text" id="title" name="txt"  />
-        <br></br>Enunciado de la Pregunta:<br></br><textarea type="text" id="txt" name="txt2" cols="50" rows="20" ></textarea>
+        <br/><br/>Nombre de la Pregunta:<br/><br/><input type="text" id="title" name="txt"  />
+        <br/><br/>Enunciado de la Pregunta:<br/><br/><textarea type="text" id="txt" name="txt2" cols="50" rows="20" ></textarea>
 
     
  
@@ -66,9 +66,9 @@ class Component extends React.Component{
     <p id="final"></p>
 
     <p id="calificacion"></p>
-    <br></br><input type='submit' value='Guardar'/>
+    <br/><br/><input type='submit' value='Guardar' class='btn-ghost round'/>
     </form>
-    <br></br><button onClick={this.myFunction}>Siguiente</button>
+    <br/><br/><button onClick={this.myFunction} class='btn-ghost round'>Siguiente</button>
                 </div>
         
         );

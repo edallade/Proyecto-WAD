@@ -103,7 +103,7 @@ class Muestra extends React.Component{
           </div>   
         ))} 
 
-        <br></br> <button onClick={this.handlerClick}>valida</button>
+        <br/><br/> <button onClick={this.handlerClick} class='btn-ghost round'>Calificar</button>
             </div>
 
                 );
@@ -173,5 +173,3 @@ ReactDOM.render (<Muestra />,document.getElementById('muestra'));
  var x=0;
  var seleccionadas = new Array();
  var correctas = new Array();
- 
- 
