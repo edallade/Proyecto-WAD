@@ -24,7 +24,7 @@ class MyComponent extends React.Component {
     render() {
         return(
                 <div id="texto">
-                    <a href="crearExamen.jsp"><button style = {style}>Crear Examen</button></a>
+                    <a href="crearExamen.jsp"><button style ={style}>Crear Examen</button></a>
                     <form action="eliminarEjercicio" method="post">
                         <table id="tablad" border="1" class="redTable"></table>
                     </form>

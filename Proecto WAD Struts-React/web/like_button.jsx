@@ -1,3 +1,50 @@
+const {
+  Button, colors,createMuiTheme,CssBaseline,Dialog,DialogActions,DialogContent,DialogContentText,
+  DialogTitle,Icon,MuiThemeProvider,Typography,Paper,withStyles,main,Avatar,FormControl,
+  InputLabel,Input,FormControlLabel,form, Checkbox } = window['material-ui'];
+
+const styles = theme => ({
+    
+  root: {
+    textAlign: 'center',
+    paddingTop: theme.spacing.unit * 20,
+  },
+  icon: {
+    marginRight: theme.spacing.unit,
+  },
+  main: {
+    width: 'auto',
+    display: 'block', // Fix IE 11 issue.
+    marginLeft: theme.spacing.unit * 3,
+    marginRight: theme.spacing.unit * 3,
+    [theme.breakpoints.up(400 + theme.spacing.unit * 3 * 2)]: {
+      width: 400,
+      marginLeft: 'auto',
+      marginRight: 'auto',
+    },
+  },
+  paper: {
+    marginTop: theme.spacing.unit * 8,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${theme.spacing.unit * 3}px`,
+    
+  },
+  avatar: {
+    margin: theme.spacing.unit,
+    backgroundColor: theme.palette.secondary.main,
+  },
+  form: {
+    width: '100%', // Fix IE 11 issue.
+    marginTop: theme.spacing.unit,
+  },
+  submit: {
+    marginTop: theme.spacing.unit * 3,
+  },  
+});
+
+
 class MyComponent extends React.Component {
     constructor(props) {
         super(props);
@@ -9,27 +56,39 @@ class MyComponent extends React.Component {
     }
 
     componentDidMount() {
-
-        fetch('http://localhost:8080/LOGINSTRUTS2HIBERNATE_GOOD/Ejercicios.xml')
-                .then(response => response.text())
-
-                .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
-                .then(data => console.log(data.getElementsByTagName("test")));
-
     }
 
     render() {
+        const { classes } = this.props;
         return(
-                <div>
-                    <form  action="Login" method="post">
-                        Name: <input  type="text" name="userName"/>Password:
-                
-                        <input type="password" name="password"  />
-                
-                        <input type="submit" value="Ingresar" ></input>
+                <main className={classes.main}>
+        <CssBaseline />
+                <Paper className={classes.paper}>
+                    <Typography component="h1" variant="h5">
+                                        Wellcome
+                    </Typography>
+                    <form  action="Login" method="post" className={classes.form}>
+                    <FormControl margin="name" required fullWidth>
+                        <InputLabel htmlFor="name">Name</InputLabel> 
+                        <Input  type="text" name="userName" autoComplete="name"/>
+                    </FormControl>
+                    <FormControl margin="password " required fullWidth>
+                        <InputLabel htmlFor="password">Password</InputLabel> 
+                        <Input type="password" name="password"  />
+                    </FormControl>    
+                        
+                        <Button type="submit"
+                  fullWidth
+                  variant="contained"
+                  color="primary"
+                  className={classes.submit}>
+                  Enviar
+          </Button>
                     </form>
-                </div>
+                    </Paper>
+                </main>
                 );
     }
 }
-ReactDOM.render(<MyComponent />, document.getElementById('app'));
+const Inicio = withStyles(styles)(MyComponent);
+ReactDOM.render(<Inicio />, document.getElementById('app'));
