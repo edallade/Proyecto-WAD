@@ -14,13 +14,13 @@
     <body>
         <%String user = (String) request.getSession().getAttribute("sesionusuario");%>
         <h3>Profesor: <%=user%></h3>
-        <h1>Creación de         Examenes</h1>
+        <h1>Creación de Exámenes</h1>
         <div id="app"></div>
         <div id="contenido"></div>
         <script  type="text/babel" src="tablaCrearExamen.jsx">
 
 
         </script>
-        <a href="examenProfesor.jsp">Ver examenes</a>
+        <br/><br/><br/><a href="examenProfesor.jsp" class='btn-ghost round'>Ver exámenes</a>
     </body>
 </html>

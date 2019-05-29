@@ -1,75 +1,147 @@
 body{
-	background-color: #632432;
-	font-family: 'Helvetica Neue';  
-	text-align: center;
+    background-color: #632432;
+    font-family: 'Helvetica Neue';  
+    text-align: center;
 }
 
 #main-container{
-	margin: 150px auto;
-	width: 600px;
+    margin: 150px auto;
+    width: 600px;
 }
 
 h1{
-	text-align: center;
-	color: white;
+    text-align: center;
+    color: white;
 }
 
 h3{
-	color: white;
-}
-
-a:link {
-	color: black;
-	text-decoration: none;
-}
-  
-a:visited {
-	color: green;
-	text-decoration: none;
-}
-  
-a:hover {
-		color: white;
-		text-decoration: underline;
-}
-  
-a:active {
-		color: white;
-		text-decoration: underline;
-}
-
-tr:hover a{
-	background-color: #369681;
-	color: white;
+    color: white;
 }
 
 p{
-	text-align: center;
-	color: white;
+    color: white;
+}
+
+a:link {
+    color: black;
+    text-decoration: none;
+}
+
+a:visited {
+    color: green;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+a:active {
+    color: white;
+    text-decoration: underline;
+}
+
+tr:hover a{
+    background-color: #369681;
+    color: white;
+}
+
+p{
+    text-align: center;
+    color: white;
 }
 
 table{
-	background-color: white;
-	text-align: left;
-	border-collapse: collapse;
-	width: 100%;
+    background-color: white;
+    text-align: left;
+    border-collapse: collapse;
+    width: 100%;
 }
 
 th, td{
-	padding: 20px;
+    padding: 20px;
 }
 
 thead{
-	background-color: #246355;
-	border-bottom: solid 5px #0F362D;
-	color: white;
+    background-color: #246355;
+    border-bottom: solid 5px #0F362D;
+    color: white;
 }
 
 tr:nth-child(even){
-	background-color: #ddd;
+    background-color: #ddd;
 }
 
 tr:hover td{
-	background-color: #369681;
-	color: white;
+    background-color: #369681;
+    color: white;
 }   
+
+:root{
+    --pink: #EF3C82;
+    --white: white;
+    --black: black;
+    --red: #E74C3C;
+    --blue: #3498DB;
+    --purple: #9B59B6;
+    --yellow: #FEB506;
+    --green: #62CB31;
+}
+
+*{
+    font-family: Century Gothic,CenturyGothic,AppleGothic; 
+}
+body{
+    margin: 0;
+}
+.bg-dark{
+    background-color: rgb(48, 51, 59);
+    background-image: -webkit-radial-gradient(center , circle cover, rgb(57, 59, 69) 0%, rgb(45, 48, 56) 70%);
+    min-height: calc(100vh - 30px);
+    margin: 0;
+}
+
+.btn-container{
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.btn-item{
+}
+
+
+.btn-ghost{
+    position: relativate;
+    display: inline-block;
+    border: 2px solid var(--white);
+    padding: 20px 80px;
+    color: var(--black);
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: var(--white);
+    transition: color 0.5s, background 0.5s;
+    margin-left: 30px;
+    margin-bottom: 15px;
+    font-size: 1em;
+    min-width: 140px;
+    text-align: center;
+}
+
+.btn-ghost.round{
+    border-radius: 30px;
+}
+
+.btn-ghost:hover{
+    color: var(--white);
+    background-color: transparent;
+}
+
+.btn-ghost:active{
+    box-shadow: inset 0 0 20px var(--white);
+}
+

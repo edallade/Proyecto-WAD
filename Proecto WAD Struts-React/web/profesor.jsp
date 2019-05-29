@@ -12,17 +12,17 @@
         <script src="https://unpkg.com/babel-standalone@latest/babel.min.js" crossorigin="anonymous"></script>
         <%--Dependencias y recursos de Material UI y Material Icons--%>
         <script src="https://unpkg.com/@material-ui/core@3.9.3/umd/material-ui.development.js" crossorigin="anonymous"></script>
-         <link rel="stylesheet" type="text/css" href="css/fondos.css"/>
+        <link rel="stylesheet" type="text/css" href="css/fondos.css"/>
     <body>
         <%String user = (String) request.getSession().getAttribute("sesionusuario");%>
         <h3>Profesor: <%=user%></h3>
-        <h1>Creacion de Preguntas</h1>
+        <h1>Creación de Preguntas</h1>
         <div id="app"></div>
         <div id="contenido"></div>
         <script  type="text/babel" src="tablaPreguntas.jsx">
 
 
         </script>
-        <a href="examenProfesor.jsp">Ver examenes</a>
+        <br/><br/><a href="examenProfesor.jsp" class='btn-ghost round'>Ver exámenes</a>
     </body>
 </html>

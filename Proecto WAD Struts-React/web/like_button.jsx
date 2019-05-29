@@ -65,7 +65,9 @@ class MyComponent extends React.Component {
         <CssBaseline />
                 <Paper className={classes.paper}>
                     <Typography component="h1" variant="h5">
-                                        Wellcome
+                        <center>
+                            Welcome<br/>Missing Words & Sequencing
+                        </center>
                     </Typography>
                     <form  action="Login" method="post" className={classes.form}>
                     <FormControl margin="name" required fullWidth>
@@ -82,10 +84,16 @@ class MyComponent extends React.Component {
                   variant="contained"
                   color="primary"
                   className={classes.submit}>
-                  Enviar
+                  Log in
           </Button>
                     </form>
                     </Paper>
+                    <br/><br/>
+                    <Typography component="h1" variant="h6">
+                        <center>
+                            Castillo Hernández, Lara Delgado, Soria Zúñiga
+                        </center>
+                    </Typography>
                 </main>
                 );
     }
