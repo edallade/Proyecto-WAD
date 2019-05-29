@@ -1,13 +1,3 @@
-/*const style = {
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    borderRadius: 3,
-    border: 0,
-    color: 'white',
-    height: 48,
-    padding: '0 30px',
-    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-};*/
-
 class MyComponent extends React.Component {
     constructor(props) {
         super(props);
@@ -27,9 +17,7 @@ class MyComponent extends React.Component {
     render() {
         return(
                 <div id="texto">
-                    <a href="crea.jsp"><button class='btn-ghost round'>Crear Pregunta</button></a>
-                    <form action="eliminarEjercicio" method="post">
-                
+                    <form action="eliminarEjercicio" method="post">                
                         <table id="tablad" border="1" class="redTable" ></table>
                     </form>
                 </div>
