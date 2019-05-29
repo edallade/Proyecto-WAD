@@ -21,8 +21,6 @@ class MyComponent extends React.Component {
                         <table id="tablad" border="1" class="redTable" ></table>
                     </form>
                 </div>
-
-
                 );
     }
 }
