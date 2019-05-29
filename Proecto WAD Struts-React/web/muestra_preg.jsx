@@ -30,16 +30,18 @@ class Muestra extends React.Component{
   
   .then(str => (new  window.DOMParser()).parseFromString(str, "text/xml"))
   .then(data => {
-     
+     var num_preg = parseInt(document.getElementById("numPreg").value,10);
+     console.log(num_preg);
       var opts;
       var text_array;
       let preguntas = data.getElementsByTagName("pregunta");
-      let name =preguntas[0].getElementsByTagName("nombre")[0].textContent;
-      let texto = preguntas[0].getElementsByTagName("texto")[0].textContent;
+      console.log(preguntas);
+      let name =preguntas[num_preg-1].getElementsByTagName("nombre")[0].textContent;
+      let texto = preguntas[num_preg-1].getElementsByTagName("texto")[0].textContent;
       text_array = texto.split("&");
       var long = text_array.length;
       text_array.pop();
-      let grupos = preguntas[0].getElementsByTagName("grupo");
+      let grupos = preguntas[num_preg-1].getElementsByTagName("grupo");
       console.log(text_array);
    
     for(var i=0;i < grupos.length;i++){
