@@ -48,7 +48,7 @@ function myFunction(xml) {
         tabla += "</td><td>";
         tabla += tests[i].getElementsByTagName("nombre")[0].textContent;
         tabla += "</td><td>";
-        tabla += "<input type='checkbox' name='Seleccionado' value='" + tests[i].getAttribute("id") + "'/>";
+        tabla += "<input type='checkbox' name='Seleccionado' value='" + tests[i].getAttribute("idpreg") + "'/>";
         tabla += "</td></tr>";
     }
     document.getElementById("tablad").innerHTML = tabla;
