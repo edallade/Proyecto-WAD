@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE Data>
 <Data>
   <examenes />
   <pregunta idpreg="1">
@@ -22,7 +21,7 @@
       </opciones>
     </grupo>
   </pregunta>
-  <pregunta idpreg="4">
+  <pregunta idpreg="2">
     <nombre>hola</nombre>
     <texto>un tigre es un &amp; muy &amp;</texto>
     <grupo idgroup="1">
@@ -42,7 +41,7 @@
       </opciones>
     </grupo>
   </pregunta>
-  <pregunta idpreg="5">
+  <pregunta idpreg="3">
     <nombre>dos</nombre>
     <texto>hola &amp; preguntas &amp;</texto>
     <grupo idgroup="1">
@@ -62,4 +61,11 @@
       </opciones>
     </grupo>
   </pregunta>
+  <quiz quizID="1">
+    <name>Prueba</name>
+  </quiz>
+  <quiz quizID="2" teacherID="2">
+    <name>Prueba1</name>
+    <testID>null</testID>
+  </quiz>
 </Data>

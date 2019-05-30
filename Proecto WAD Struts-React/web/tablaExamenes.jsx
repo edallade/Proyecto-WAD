@@ -1,12 +1,3 @@
-/*const style = {
-  background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-  borderRadius: 3,
-  border: 0,
-  color: 'white',
-  height: 48,
-  padding: '0 30px',
-  boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-};*/
 class MyComponent extends React.Component {
     constructor(props) {
         super(props);
@@ -25,9 +16,7 @@ class MyComponent extends React.Component {
         return(
                 <div id="texto">
                     <a href="crearExamen.jsp"><button class='btn-ghost round'>Crear Examen</button></a>
-                    <form action="eliminarEjercicio" method="post">
                         <table id="tablad" border="1" class="redTable"></table>
-                    </form>
                 </div>
 
 
@@ -59,7 +48,9 @@ function myFunction(xml) {
         tabla += "</td><td>";
         tabla += "<button class='btn-ghost round'>Modificar Examen</button>";
         tabla += "</td><td>";
-        tabla += "<button name='idRef' type='submit' value=" + tests[i].getAttribute("id") + " class='btn-ghost round'>Eliminar Examen</button>";
+        tabla += "<form action='eliminarEjercicio' method='post'>  ";
+        tabla += "<button name='idRef' type='submit' value=" + tests[i].getAttribute("idpreg") + " class='btn-ghost round'>Eliminar Examen</button>";
+        tabla += "</form > ";
         tabla += "</td></tr>";
     }
     document.getElementById("tablad").innerHTML = tabla;

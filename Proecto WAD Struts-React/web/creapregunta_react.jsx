@@ -1,9 +1,3 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 const style1= {
     WIDTH: 350,
     HEIGHT: 20
@@ -37,15 +31,12 @@ class Component extends React.Component{
             alert("Ingresa una cadena por favor!");
         } else {
             for (var i = 0; i < tamRes - 1; i++) {
-                selMV+="<br></br>Opciones de la palabra faltante :" + (i+1)
+                selMV+="<br></br>Opciones de la palabra faltante : " + (i+1)
                 for (var j =1; j< 5 ; j++){
-                   selMV+=" <br></br><input type='text' id='input"+(i+1)+"_"+ j +" ' name='input"+(i+1)+"_"+j+" ' />";
-                    
+                   selMV+="<br></br><input placeholder='Opción " + j + "' type='text' id='input" + (i+1) + "_"+ j +" ' name='input"+(i+1)+"_"+j+" ' />";                 
                 }
-                
-                
             }
-            selMV += res[tamRes - 1];
+            //selMV += res[tamRes - 1];
             document.getElementById("sel").innerHTML = selMV;
             console.log("Texto con los inputs:", selMV);
         }
@@ -55,8 +46,8 @@ class Component extends React.Component{
         return (
         <div id="texto">
         <form action="guarda" method="post">
-        <br></br>Nombre de la Pregunta:<br></br><input type="text" id="title" name="txt"  />
-        <br></br>Enunciado de la Pregunta:<br></br><textarea type="text" id="txt" name="txt2" cols="50" rows="20" ></textarea>
+        <br/><br/>Nombre de la Pregunta:<br/><br/><input placeholder="Nombre de la pregunta" type="text" id="title" name="txt"  />
+        <br/><br/>Enunciado de la Pregunta:<br/><br/><textarea placeholder="Ejemplo: Esto es un & del ejercicio para &" type="text" id="txt" name="txt2" cols="50" rows="20" ></textarea>
 
     
  
@@ -66,9 +57,9 @@ class Component extends React.Component{
     <p id="final"></p>
 
     <p id="calificacion"></p>
-    <br></br><input type='submit' value='Guardar'/>
+    <br/><br/><input type='submit' value='Guardar' class='btn-ghost round'/>
     </form>
-    <br></br><button onClick={this.myFunction}>Siguiente</button>
+    <br/><br/><button onClick={this.myFunction} class='btn-ghost round'>Siguiente</button>
                 </div>
         
         );

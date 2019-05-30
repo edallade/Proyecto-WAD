@@ -1,8 +1,4 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */ const l ={
+const l ={
  
    display : "inline-block"
    
@@ -25,7 +21,7 @@ class Muestra extends React.Component{
     }
         componentWillMount ()  {
        
-  fetch('http://localhost:8080/Proyecto_WAD_Struts-React/Data.xml')
+  fetch('http://localhost:8080/Proyecto_WAD_Struts-React/Data.xml')//CAMBIAR DEPENDIENDO DEL SERVIDOR
   .then(response => response.text())
   
   .then(str => (new  window.DOMParser()).parseFromString(str, "text/xml"))
@@ -103,7 +99,7 @@ class Muestra extends React.Component{
           </div>   
         ))} 
 
-        <br></br> <button onClick={this.handlerClick}>valida</button>
+        <br/><br/> <button onClick={this.handlerClick} class='btn-ghost round'>Calificar</button>
             </div>
 
                 );
@@ -173,5 +169,3 @@ ReactDOM.render (<Muestra />,document.getElementById('muestra'));
  var x=0;
  var seleccionadas = new Array();
  var correctas = new Array();
- 
- 

@@ -27,6 +27,11 @@
             <result name="profesor" >crea.jsp</result>
             
         </action>
+        <action name="verEjercicio" method="execute" class="actionsupportpackage.verEjercicio">
+            <result name="success" >output1.jsp</result>
+            <result name="input" >input1.jsp</result>
+            <result name="verejercicio">muestra.jsp</result>
+        </action>
         
     </package>
 </struts>

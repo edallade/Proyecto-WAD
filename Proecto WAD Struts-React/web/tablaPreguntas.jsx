@@ -1,13 +1,3 @@
-/*const style = {
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    borderRadius: 3,
-    border: 0,
-    color: 'white',
-    height: 48,
-    padding: '0 30px',
-    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-};*/
-
 class MyComponent extends React.Component {
     constructor(props) {
         super(props);
@@ -27,14 +17,10 @@ class MyComponent extends React.Component {
     render() {
         return(
                 <div id="texto">
-                    <a href="crea.jsp"><button class='btn-ghost round'>Crear Pregunta</button></a>
-                    <form action="eliminarEjercicio" method="post">
-                
+                               
                         <table id="tablad" border="1" class="redTable" ></table>
-                    </form>
+                        
                 </div>
-
-
                 );
     }
 }
@@ -59,11 +45,15 @@ function myFunction(xml) {
         tabla += "</td><td>";
         tabla += tests[i].getElementsByTagName("nombre")[0].textContent;
         tabla += "</td><td>";
-        tabla += "<button name='idRef' type='submit' value=" + tests[i].getAttribute("id") + " class='btn-ghost round'>Ver pregunta</button>";
+        tabla += "<form action='verEjercicio' method='post'>  ";
+        tabla += "<button name='idRef' type='submit' value=" + tests[i].getAttribute("idpreg") + " class='btn-ghost round'>Ver pregunta</button>";
+        tabla += "</form>";
         tabla += "</td><td>";
-        tabla += "<button name='idRef' type='submit' value=" + tests[i].getAttribute("id") + " class='btn-ghost round'>Modificar pregunta</button>";
+        tabla += "<button name='idRef' type='submit' value=" + tests[i].getAttribute("idpreg") + " class='btn-ghost round'>Modificar pregunta</button>";
         tabla += "</td><td>";
-        tabla += "<button name='idRef' type='submit' value=" + tests[i].getAttribute("id") + " class='btn-ghost round'>Eliminar pregunta</button>";
+        tabla += "<form action='eliminarEjercicio' method='post'>  ";
+        tabla += "<button name='idRef' type='submit' value=" + tests[i].getAttribute("idpreg") + " class='btn-ghost round'>Eliminar pregunta</button>";
+        tabla += "</form>";
         tabla += "</td></tr>";
     }
     document.getElementById("tablad").innerHTML = tabla;

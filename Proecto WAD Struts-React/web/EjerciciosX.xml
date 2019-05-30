@@ -1,47 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MissingWords xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="EjerciciosXchema.xsd">
-    <test id="1" teacherID="2">
-        <testName>hI</testName>
-        <enunciado>"Esto es un ", " para el ", " de WAD"</enunciado>
-        <missingWord>"ejemplo", "ejercicio"</missingWord>
-        <image>ejemplo.jpg</image>
-        <audio>ejemplo.mp3</audio>
-    </test>
-    <test id="2" teacherID="2">
-        <testName>Dos</testName>
-        <enunciado>"", " esto es un ", " para el ", " de WAD"</enunciado>
-        <missingWord>"Hola", "ejemplo", "ejercicio"</missingWord>
-        <image>ejemplo.jpg</image>
-        <audio>ejemplo.mp3</audio>
-    </test>
-    <test id="3" teacherID="2">
-        <testName>Tres</testName>
-        <enunciado>"", " esto es un ", " para el ", " de WAD"</enunciado>
-        <missingWord>"Hola", "ejemplo", "ejercicio"</missingWord>
-        <image>ejemplo.jpg</image>
-        <audio>ejemplo.mp3</audio>
-    </test>
-    <test id="5" teacherID="2">
-        <testName>Cuatro</testName>
-        <enunciado>"", " esto es un ", " para el ", " de WAD"</enunciado>
-        <missingWord>"Hola", "ejemplo", "ejercicio"</missingWord>
-        <image>ejemplo.jpg</image>
-        <audio>ejemplo.mp3</audio>
-    </test>
-    <quiz quizID="1" teacherID="2">
-        <name>Primer Examen</name>
-        <testID>1</testID>
-        <testID>2</testID>
-        <testID>3</testID>
-    </quiz>
-    <quiz quizID="1" teacherID="2">
-        <name>Primer Examen</name>
-        <testID>1</testID>
-        <testID>2</testID>
-        <testID>3</testID>
-    </quiz>
-    <quiz quizID="2" teacherID="2">
-        <name>Prueba</name>
-        <testID>1</testID>
-    </quiz>
+  <test id="1" teacherID="2">
+    <testName>hI</testName>
+    <enunciado>"Esto es un ", " para el ", " de WAD"</enunciado>
+    <missingWord>"ejemplo", "ejercicio"</missingWord>
+    <image>ejemplo.jpg</image>
+    <audio>ejemplo.mp3</audio>
+  </test>
+  <test id="2" teacherID="2">
+    <testName>Dos</testName>
+    <enunciado>"", " esto es un ", " para el ", " de WAD"</enunciado>
+    <missingWord>"Hola", "ejemplo", "ejercicio"</missingWord>
+    <image>ejemplo.jpg</image>
+    <audio>ejemplo.mp3</audio>
+  </test>
+  <test id="3" teacherID="2">
+    <testName>Tres</testName>
+    <enunciado>"", " esto es un ", " para el ", " de WAD"</enunciado>
+    <missingWord>"Hola", "ejemplo", "ejercicio"</missingWord>
+    <image>ejemplo.jpg</image>
+    <audio>ejemplo.mp3</audio>
+  </test>
+  <test id="5" teacherID="2">
+    <testName>Cuatro</testName>
+    <enunciado>"", " esto es un ", " para el ", " de WAD"</enunciado>
+    <missingWord>"Hola", "ejemplo", "ejercicio"</missingWord>
+    <image>ejemplo.jpg</image>
+    <audio>ejemplo.mp3</audio>
+  </test>
+  <quiz quizID="1" teacherID="2">
+    <name>Primer Examen</name>
+    <testID>1</testID>
+    <testID>2</testID>
+    <testID>3</testID>
+  </quiz>
+  <quiz quizID="1" teacherID="2">
+    <name>Primer Examen</name>
+    <testID>1</testID>
+    <testID>2</testID>
+    <testID>3</testID>
+  </quiz>
+  <quiz quizID="2" teacherID="2">
+    <name>Prueba</name>
+    <testID>1</testID>
+  </quiz>
+  <quiz quizID="3" teacherID="2">
+    <name>Primer Examen</name>
+    <testID>null</testID>
+    <testID>null</testID>
+  </quiz>
+  <quiz quizID="4" teacherID="2">
+    <name>a</name>
+    <testID>null</testID>
+  </quiz>
 </MissingWords>
