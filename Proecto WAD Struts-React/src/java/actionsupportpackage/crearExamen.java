@@ -31,7 +31,7 @@ public class crearExamen extends ActionSupport {
             String rutaAbsoluta = request.getSession().getServletContext().getRealPath("/");
             rutaAbsoluta = rutaAbsoluta.replace("\\", "/");
             rutaAbsoluta = rutaAbsoluta.replaceAll("/build", "");
-            rutaAbsoluta = rutaAbsoluta.concat("EjerciciosX.xml");
+            rutaAbsoluta = rutaAbsoluta.concat("Data.xml");
             File BD = new File(rutaAbsoluta);
 
             //Para cargar el documento xml

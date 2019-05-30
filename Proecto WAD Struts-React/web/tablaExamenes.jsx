@@ -16,9 +16,7 @@ class MyComponent extends React.Component {
         return(
                 <div id="texto">
                     <a href="crearExamen.jsp"><button class='btn-ghost round'>Crear Examen</button></a>
-                    <form action="eliminarEjercicio" method="post">
                         <table id="tablad" border="1" class="redTable"></table>
-                    </form>
                 </div>
 
 
@@ -50,7 +48,9 @@ function myFunction(xml) {
         tabla += "</td><td>";
         tabla += "<button class='btn-ghost round'>Modificar Examen</button>";
         tabla += "</td><td>";
-        tabla += "<button name='idRef' type='submit' value=" + tests[i].getAttribute("id") + " class='btn-ghost round'>Eliminar Examen</button>";
+        tabla += "<form action='eliminarEjercicio' method='post'>  ";
+        tabla += "<button name='idRef' type='submit' value=" + tests[i].getAttribute("idpreg") + " class='btn-ghost round'>Eliminar Examen</button>";
+        tabla += "</form > ";
         tabla += "</td></tr>";
     }
     document.getElementById("tablad").innerHTML = tabla;

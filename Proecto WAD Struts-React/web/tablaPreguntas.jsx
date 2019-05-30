@@ -17,9 +17,9 @@ class MyComponent extends React.Component {
     render() {
         return(
                 <div id="texto">
-                    <form action="eliminarEjercicio" method="post">                
+                               
                         <table id="tablad" border="1" class="redTable" ></table>
-                    </form>
+                        
                 </div>
                 );
     }
@@ -45,11 +45,15 @@ function myFunction(xml) {
         tabla += "</td><td>";
         tabla += tests[i].getElementsByTagName("nombre")[0].textContent;
         tabla += "</td><td>";
-        tabla += "<button name='idRef' type='submit' value=" + tests[i].getAttribute("id") + " class='btn-ghost round'>Ver pregunta</button>";
+        tabla += "<form action='verEjercicio' method='post'>  ";
+        tabla += "<button name='idRef' type='submit' value=" + tests[i].getAttribute("idpreg") + " class='btn-ghost round'>Ver pregunta</button>";
+        tabla += "</form>";
         tabla += "</td><td>";
-        tabla += "<button name='idRef' type='submit' value=" + tests[i].getAttribute("id") + " class='btn-ghost round'>Modificar pregunta</button>";
+        tabla += "<button name='idRef' type='submit' value=" + tests[i].getAttribute("idpreg") + " class='btn-ghost round'>Modificar pregunta</button>";
         tabla += "</td><td>";
-        tabla += "<button name='idRef' type='submit' value=" + tests[i].getAttribute("id") + " class='btn-ghost round'>Eliminar pregunta</button>";
+        tabla += "<form action='eliminarEjercicio' method='post'>  ";
+        tabla += "<button name='idRef' type='submit' value=" + tests[i].getAttribute("idpreg") + " class='btn-ghost round'>Eliminar pregunta</button>";
+        tabla += "</form>";
         tabla += "</td></tr>";
     }
     document.getElementById("tablad").innerHTML = tabla;

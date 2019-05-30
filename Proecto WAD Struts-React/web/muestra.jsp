@@ -9,16 +9,18 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Examen</title>
+        <title>Ver Pregunta</title>
         <link rel="stylesheet" type="text/css" href="css/fondos.css"/>
     </head>
     <body>
         <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin=""></script>
         <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin=""></script>
         <script src="https://unpkg.com/babel-standalone@6/babel.min.js" crossorigin=""></script> 
-
+        
         <!---------------------------MENÚ----------------------------->
+        <%String idRef = (String) request.getSession().getAttribute("valorPreg");%>
         <div id="header">
+            <%=idRef%>
             <ul class="nav">
                 <li><a href="profesor.jsp">Preguntas</a>
                     <ul>
@@ -40,5 +42,5 @@
 
         </div>
         <script type="text/babel" src="muestra_preg.jsx"></script>    </body>
-    <input type="text" value="2" hidden="true" id="numPreg"/>
+    <input type="text" value="<%=idRef%>" hidden="true" id="numPreg"/>
 </html>
