@@ -25,4 +25,6 @@
      </div>
      <script type="text/babel" src="muestra_preg.jsx"></script>    </body>
     <input type="text" value="2" hidden="true" id="numPreg"/>
+    <div id="prueba"></div>
+    <script type="text/babel" src="prueba_subida_archivo.jsx"></script>
 </html>

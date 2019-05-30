@@ -4,17 +4,28 @@
  * and open the template in the editor.
  */
 
-class prueba extends React.Component {
+class Prueba extends React.Component {
     constructor(){
         super();
         this.sube = this.sube.bind(this);
     }
     
-    sube(){
-        var h = new Headers();
-    }
+    sube(e){
+    fetch('http://localhost:8080/Proyecto_WAD_Struts-React', {
+ // content-type header should not be specified!
+    method: 'POST',
+    body: document.getElementById("archivo").files[0]
+  })
+    .then(response => response.json())
+    .then(success => {
+      // Do something with the successful response
+    })
+    .catch(error => console.log(error)
+  );
+}
+    
     render(){
-        retur(
+        return(
                 <div>
         <form actions="#">
         <input type="file" id="archivo" accept="image/x-png"/>
@@ -25,4 +36,4 @@ class prueba extends React.Component {
         );
     }
 };
-ReactDOM.render (<prueba />,document.getElementById('prueba'));
+ReactDOM.render (<Prueba />,document.getElementById('prueba'));
