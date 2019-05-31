@@ -21,7 +21,7 @@ class Muestra extends React.Component{
     }
         componentWillMount ()  {
        
-  fetch('http://localhost:8080/Proyecto_WAD_Struts-React/Data.xml')//CAMBIAR DEPENDIENDO DEL SERVIDOR
+  fetch('Data.xml')//CAMBIAR DEPENDIENDO DEL SERVIDOR
   .then(response => response.text())
   
   .then(str => (new  window.DOMParser()).parseFromString(str, "text/xml"))
