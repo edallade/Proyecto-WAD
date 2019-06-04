@@ -22,7 +22,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class EliminarEjercicio extends ActionSupport {
+public class EliminarExamen extends ActionSupport {
 
     private String idRef;
 
@@ -61,12 +61,12 @@ public class EliminarEjercicio extends ActionSupport {
     }
 
     private void deleteElement(Document doc, int id) {
-        NodeList list = doc.getElementsByTagName("pregunta");
+        NodeList list = doc.getElementsByTagName("quiz");
         for (int i = 0; i < list.getLength(); i++) {
             Node node = list.item(i);
             if (node.getNodeType() == Node.ELEMENT_NODE) {
                 Element element = (Element) node;
-                if (element.getAttribute("idpreg").equals(String.valueOf(id))) {
+                if (element.getAttribute("quizID").equals(String.valueOf(id))) {
                     Node prev = node.getPreviousSibling();
                     if (prev != null && prev.getNodeType() == Node.TEXT_NODE && prev.getNodeValue().trim().length() == 0) {
                         doc.getDocumentElement().removeChild(prev);

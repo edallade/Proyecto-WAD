@@ -46,10 +46,10 @@ function myFunction(xml) {
         tabla += "</td><td>";
         tabla += "<button class='btn-ghost round'>Ver Examen</button>";
         tabla += "</td><td>";
-        tabla += "<button class='btn-ghost round'>Modificar Examen</button>";
+        tabla += "<a href='modificarExamen.jsp?idRef="+tests[i].getAttribute("quizID")+"'><button class='btn-ghost round'>Modificar Examen</button></a>";
         tabla += "</td><td>";
-        tabla += "<form action='eliminarEjercicio' method='post'>  ";
-        tabla += "<button name='idRef' type='submit' value=" + tests[i].getAttribute("idpreg") + " class='btn-ghost round'>Eliminar Examen</button>";
+        tabla += "<form action='eliminarExamen' method='post'>  ";
+        tabla += "<button name='idRef' type='submit' value=" + tests[i].getAttribute("quizID") + " class='btn-ghost round'>Eliminar Examen</button>";
         tabla += "</form > ";
         tabla += "</td></tr>";
     }

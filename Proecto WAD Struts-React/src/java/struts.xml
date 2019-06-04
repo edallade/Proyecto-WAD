@@ -18,6 +18,12 @@
             <result name="input" >input1.jsp</result>
             <result name="examenprofesor">profesor.jsp</result>
         </action>
+        <action name="eliminarExamen" method="execute" class="actionsupportpackage.EliminarExamen">
+            <result name="success" >output1.jsp</result>
+            <result name="input" >input1.jsp</result>
+            <result name="examenprofesor">examenProfesor.jsp</result>
+        </action>
+        
         <action name="crearExamen" method="execute" class="actionsupportpackage.crearExamen">
             <result name="success" >output1.jsp</result>
             <result name="input" >input1.jsp</result>
@@ -32,6 +38,10 @@
             <result name="input" >input1.jsp</result>
             <result name="verejercicio">muestra.jsp</result>
         </action>
-        
+        <action name="modificarExamen" method="execute" class="actionsupportpackage.ModificarExamen">
+            <result name="success" >output1.jsp</result>
+            <result name="input" >input1.jsp</result>
+            <result name="examenes">examenProfesor.jsp</result>
+        </action>
     </package>
 </struts>

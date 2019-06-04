@@ -5,18 +5,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login</title>
-        <%--Dependencias de ReactJS--%>
-        <script src="React/react.development.js" crossorigin="anonymous"></script>
-        <script src="React/react-dom.development.js" crossorigin="anonymous"></script>
-        <%--Dependencias de BabelJS--%>
-        <script src="React/babel.min.js" crossorigin="anonymous"></script>
-        <%--Dependencias y recursos de Material UI y Material Icons--%>
-        <script src="MaterialUI/material-ui.development.js" crossorigin="anonymous"></script>
-    </head>
-    <body>
         <script src="React/react.development.js" crossorigin=""></script>
         <script src="React/react-dom.development.js" crossorigin=""></script>
         <script src="React/babel.min.js" crossorigin=""></script>
+        <%--Dependencias y recursos de Material UI y Material Icons--%>
+        <script src="https://unpkg.com/@material-ui/core@3.9.3/umd/material-ui.development.js" crossorigin="anonymous"></script>
+    </head>
     <body>
 
         <div id="app"></div>

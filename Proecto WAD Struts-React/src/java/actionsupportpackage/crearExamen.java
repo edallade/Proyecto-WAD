@@ -61,14 +61,14 @@ public class crearExamen extends ActionSupport {
             grupoP.setAttribute("quizID", id);
             grupoP.setAttribute("teacherID", idUsuario);
             nombreG.setText(ExamenN);//setText lo que va entre etiqueta de apertura y cierre
-            List lista = QuestionWriter.getChildren("test");
+            List lista = QuestionWriter.getChildren("pregunta");
             //Para obtener nombre del profesor
             //Para recorrer el arbol de nodos
             for (int i = 0; i < lista.size(); i++) {//Por cada elemento 
                 //Se procesa un elemento de la lista
                 Element element = (Element) lista.get(i);//guarda los datos de la lista en un arreglo de elementos
                 //encontrar el elemento con el id capturado
-                Attribute idT = element.getAttribute("id");
+                Attribute idT = element.getAttribute("idpreg");
 
             }
 

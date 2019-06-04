@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Data>
-  <examenes />
+  <examenes/>
   <pregunta idpreg="1">
     <nombre>uno</nombre>
     <texto>esto &amp; es un ejemssssplo &amp;  aaa</texto>
@@ -37,7 +37,7 @@
         <op>salvaje</op>
         <op>feliz</op>
         <op>docil</op>
-        <op>pequeño</op>
+        <op>pequenioo</op>
       </opciones>
     </grupo>
   </pregunta>
@@ -63,9 +63,15 @@
   </pregunta>
   <quiz quizID="1">
     <name>Prueba</name>
+    <testID>1</testID>
   </quiz>
   <quiz quizID="2" teacherID="2">
     <name>Prueba1</name>
-    <testID>null</testID>
+    <testID>1</testID>
+  </quiz>
+  <quiz quizID="3" teacherID="2">
+    <name>hOLA</name>
+    <testID>2</testID>
+    <testID>1</testID>
   </quiz>
 </Data>
