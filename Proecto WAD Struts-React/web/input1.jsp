@@ -6,17 +6,17 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login</title>
         <%--Dependencias de ReactJS--%>
-        <script src="https://unpkg.com/react@latest/umd/react.development.js" crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/react-dom@latest/umd/react-dom.development.js" crossorigin="anonymous"></script>
+        <script src="React/react.development.js" crossorigin="anonymous"></script>
+        <script src="React/react-dom.development.js" crossorigin="anonymous"></script>
         <%--Dependencias de BabelJS--%>
-        <script src="https://unpkg.com/babel-standalone@latest/babel.min.js" crossorigin="anonymous"></script>
+        <script src="React/babel.min.js" crossorigin="anonymous"></script>
         <%--Dependencias y recursos de Material UI y Material Icons--%>
-        <script src="https://unpkg.com/@material-ui/core@3.9.3/umd/material-ui.development.js" crossorigin="anonymous"></script>
+        <script src="MaterialUI/material-ui.development.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin=""></script>
-        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin=""></script>
-        <script src="https://unpkg.com/babel-standalone@6/babel.min.js" crossorigin=""></script>
+        <script src="React/react.development.js" crossorigin=""></script>
+        <script src="React/react-dom.development.js" crossorigin=""></script>
+        <script src="React/babel.min.js" crossorigin=""></script>
     <body>
 
         <div id="app"></div>
