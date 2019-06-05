@@ -62,19 +62,19 @@
     </grupo>
   </pregunta>
   <quiz quizID="1">
-    <name>Prueba</name>
-    <testID>1</testID>
+    <name>Said</name>
     <testID>2</testID>
-    <testID>3</testID>
   </quiz>
   <quiz quizID="2" teacherID="2">
-    <name>Prueba12</name>
-    <testID>2</testID>
+    <name>Alexillo</name>
     <testID>1</testID>
-    <testID>2</testID>
   </quiz>
   <quiz quizID="3" teacherID="2">
-    <name>PruebaX</name>
+    <name>Alexis</name>
+    <testID>3</testID>
+  </quiz>
+  <quiz quizID="4" teacherID="2">
+    <name>Ejemplo</name>
     <testID>1</testID>
     <testID>2</testID>
     <testID>3</testID>

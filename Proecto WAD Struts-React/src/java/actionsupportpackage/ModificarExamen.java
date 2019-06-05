@@ -57,7 +57,7 @@ public class ModificarExamen extends ActionSupport {
                     //eliminar 
                     List lista3 = element.getChildren("testID");
                     for(int j = 0; j < lista3.size(); j++){
-                        element.removeChild("testID");
+                        element.removeChildren("testID");
                     }
                     for (int j = 0; j < idTest.length; j++) {
                         Element idAlumno = new Element("testID");

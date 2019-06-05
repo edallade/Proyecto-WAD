@@ -17,7 +17,7 @@ class MyComponent extends React.Component {
         return(
                 <div id="texto">
                     <form action="modificarExamen" method="post">
-                    <br/><br/><p>Nombre del examen: <input type="text" name="nombre" placeholder={document.getElementById("namePreg").value}/></p>
+                    <br/><br/><p>Nombre del examen: <input type="text" name="nombre" placeholder={document.getElementById("namePreg").value} required/></p>
                     <br/><br/><table id="tablad" border="1" class="redTable"></table>
                     <input type="text" name="idExamen" value={document.getElementById("numPreg").value} hidden="true"/>
                         <br/><br/><input type="submit" class='btn-ghost round'/>
