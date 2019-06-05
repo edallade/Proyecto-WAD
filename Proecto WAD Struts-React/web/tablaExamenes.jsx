@@ -37,7 +37,7 @@ xhttp.send();
 function myFunction(xml) {
     var xmlDoc = xml.responseXML;
     var tests = xmlDoc.getElementsByTagName("quiz");
-    var tabla = "<thead><tr><th>ID</th><th>Nombre</th><th>Ver Pregunta</th><th>Modificar Pregunta</th><th>Eliminar Pregunta</th></tr></thead>";
+    var tabla = "<thead><tr><th>ID</th><th>Nombre</th><th>Ver Examen</th><th>Probar Examen</th><th>Modificar Examen</th><th>Eliminar Examen</th></tr></thead>";
     for (var i = 0; i < tests.length; i++) {
         tabla += "<tr><td>";
         tabla += tests[i].getAttribute("quizID");
@@ -47,6 +47,8 @@ function myFunction(xml) {
         tabla += "<a href='verExamen.jsp?idRef="+tests[i].getAttribute("quizID")+"'><button class='btn-ghost round'>Ver Examen</button></a>";
         tabla += "</td><td>";
         tabla += "<a href='modificarExamen.jsp?idRef="+tests[i].getAttribute("quizID")+"&nameExamen="+tests[i].getElementsByTagName("name")[0].textContent +"'><button class='btn-ghost round'>Modificar Examen</button></a>";
+        tabla += "</td><td>";
+        tabla += "<a href='probarExamen.jsp?idRef="+tests[i].getAttribute("quizID")+"&nameExamen="+tests[i].getElementsByTagName("name")[0].textContent +"'><button class='btn-ghost round'>Probar Examen</button></a>";
         tabla += "</td><td>";
         tabla += "<form action='eliminarExamen' method='post'>  ";
         tabla += "<button name='idRef' type='submit' value=" + tests[i].getAttribute("quizID") + " class='btn-ghost round'>Eliminar Examen</button>";
