@@ -28,7 +28,7 @@
                         <li><a href="crearExamen.jsp">Crear Examen</a></li>
                     </ul>
                 </li>
-                <li><a href="">Cerrar Sesión</a></li>
+                <li><a href="signout.jsp">Cerrar Sesión</a></li>
             </ul>
         </div><br><br><br><br>
         <!---------------------------MENÚ----------------------------->
