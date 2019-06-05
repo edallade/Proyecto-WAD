@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Data>
-  <examenes/>
+  <examenes />
   <pregunta idpreg="1">
     <nombre>uno</nombre>
     <texto>esto &amp; es un ejemssssplo &amp;  aaa</texto>
@@ -64,14 +64,19 @@
   <quiz quizID="1">
     <name>Prueba</name>
     <testID>1</testID>
+    <testID>2</testID>
+    <testID>3</testID>
   </quiz>
   <quiz quizID="2" teacherID="2">
-    <name>Prueba1</name>
-    <testID>1</testID>
-  </quiz>
-  <quiz quizID="3" teacherID="2">
-    <name>hOLA</name>
+    <name>Prueba12</name>
     <testID>2</testID>
     <testID>1</testID>
+    <testID>2</testID>
+  </quiz>
+  <quiz quizID="3" teacherID="2">
+    <name>PruebaX</name>
+    <testID>1</testID>
+    <testID>2</testID>
+    <testID>3</testID>
   </quiz>
 </Data>

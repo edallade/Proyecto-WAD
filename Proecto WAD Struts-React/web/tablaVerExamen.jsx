@@ -45,6 +45,7 @@ function myFunction(xml) {
     var tests2 = xmlDoc.getElementsByTagName("quiz");
     var cont = 0;
     var tam;
+    var existe = false;
     var tabla = "<thead><tr><th>ID</th><th>Nombre</th><th>CHECK</th></tr></thead>";
     var quizQ = "<th>Name</th>";
     for(var j = 0; j < tests2.length; j++){
@@ -53,20 +54,27 @@ function myFunction(xml) {
           tam = tests2[j].getElementsByTagName("testID");
          }
     }
-    for(var j = 0; j < tam.length; j++){
-        cont++;
-    }
     for (var i = 0; i < tests.length; i++) {
         tabla += "<tr><td>";
         tabla += tests[i].getAttribute("idpreg");
         tabla += "</td><td>";
         tabla += tests[i].getElementsByTagName("nombre")[0].textContent;
         tabla += "</td><td>";
-        tabla += "<input type='checkbox' name='Seleccionado' value='" + tests[i].getAttribute("idpreg") + "'/>";
+        
+        for(var j = 0; j < tam.length; j++){
+            if(tam[j].textContent === tests[i].getAttribute("idpreg")){
+                tabla += "<input type='checkbox' name='Seleccionado' checked value='" + tests[i].getAttribute("idpreg") + "'/>";
+                existe = true;
+                break;
+            }
+        }
+        if(existe === false){
+            tabla += "<input type='checkbox' name='Seleccionado' value='" + tests[i].getAttribute("idpreg") + "'/>";
+        }
+        existe = false;
         tabla += "</td></tr>";
     }
     document.getElementById("tablad").innerHTML = tabla;
     document.getElementById("nameQ").innerHTML = quizQ;
-    document.getElementById("conta").innerHTML = cont;
     
 }

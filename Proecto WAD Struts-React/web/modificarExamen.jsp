@@ -19,7 +19,8 @@
             }
         %>
 
-        <%String idRef = (String) request.getParameter("idRef");%>
+        <%String idRef = (String) request.getParameter("idRef");
+        String nameExa = (String) request.getParameter("nameExamen");%>
         <!---------------------------MENÚ----------------------------->
         <div id="header">
             <ul class="nav">
@@ -47,5 +48,6 @@
 
         </script>
         <input type="text" value="<%=idRef%>" hidden="true" id="numPreg"/>
+        <input type="text" value="<%=nameExa %>" hidden="true" id="namePreg"/>
     </body>
 </html>
