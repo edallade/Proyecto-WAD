@@ -16,7 +16,13 @@
         <script src="React/react.development.js" crossorigin=""></script>
         <script src="React/react-dom.development.js" crossorigin=""></script>
         <script src="React/babel.min.js" crossorigin=""></script> 
-        
+
+        <%String user = (String) request.getSession().getAttribute("sesionusuario");
+            if (user == null) {
+                response.sendRedirect("input1.jsp");
+            }
+        %>
+
         <!---------------------------MENÚ----------------------------->
         <div id="header">
             <ul class="nav">
@@ -35,7 +41,7 @@
             </ul>
         </div><br><br><br><br>
         <!---------------------------MENÚ----------------------------->
-        
+
         <h1>Creador Missing Words</h1>
         <div id="c">
 

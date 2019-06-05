@@ -14,7 +14,11 @@
         <script src="MaterialUI/material-ui.development.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="css/fondos.css"/>
     <body>
-        <%String user = (String) request.getSession().getAttribute("sesionusuario");%>
+        <%String user = (String) request.getSession().getAttribute("sesionusuario");
+            if (user == null) {
+                response.sendRedirect("input1.jsp");
+            }
+        %>
 
         <!---------------------------MENÚ----------------------------->
         <div id="header">

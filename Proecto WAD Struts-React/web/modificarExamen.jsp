@@ -12,7 +12,13 @@
         <script src="React/react-dom.development.js" crossorigin=""></script>
         <script src="React/babel.min.js" crossorigin=""></script>
     <body>
-        <%String user = (String) request.getSession().getAttribute("sesionusuario");%>
+
+        <%String user = (String) request.getSession().getAttribute("sesionusuario");
+            if (user == null) {
+                response.sendRedirect("input1.jsp");
+            }
+        %>
+
         <%String idRef = (String) request.getParameter("idRef");%>
         <!---------------------------MENÚ----------------------------->
         <div id="header">

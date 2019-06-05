@@ -12,8 +12,13 @@
         <script src="React/react-dom.development.js" crossorigin=""></script>
         <script src="React/babel.min.js" crossorigin=""></script>
     <body>
-        <%String user = (String) request.getSession().getAttribute("sesionusuario");%>
-        
+
+        <%String user = (String) request.getSession().getAttribute("sesionusuario");
+            if (user == null) {
+                response.sendRedirect("input1.jsp");
+            }
+        %>
+
         <!---------------------------MENÚ----------------------------->
         <div id="header">
             <ul class="nav">
@@ -32,7 +37,7 @@
             </ul>
         </div><br><br><br><br>
         <!---------------------------MENÚ----------------------------->
-        
+
         <h3>Profesor: <%=user%></h3>
         <br><h1>Exámenes</h1>
         <br><div id="app"></div>
