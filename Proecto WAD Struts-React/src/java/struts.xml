@@ -29,11 +29,16 @@
             <result name="input" >input1.jsp</result>
             <result name="crearexamen">examenProfesor.jsp</result>
         </action>
-          <action name="guarda" method="execute" class="actionsupportpackage.guardaPreg">
-            <result name="profesor" >crea.jsp</result>
-            
+        
+        <action name="guarda" method="execute" class="actionsupportpackage.guardaPreg">
+            <result name="profesor" >crea.jsp</result>    
         </action>
-              <action name="edita" method="execute" class="actionsupportpackage.editaPreg">
+        
+        <action name="guardar" method="execute" class="actionsupportpackage.guardaSeq">
+            <result name="profesor" >creaSequencing.jsp</result>    
+        </action>
+        
+        <action name="edita" method="execute" class="actionsupportpackage.editaPreg">
             <result name="success" >profesor.jsp</result>
             
         </action>
@@ -43,12 +48,14 @@
             <result name="input" >input1.jsp</result>
             <result name="verejercicio">muestra.jsp</result>
         </action>
+        
         <action name="modificarExamen" method="execute" class="actionsupportpackage.ModificarExamen">
             <result name="success" >output1.jsp</result>
             <result name="input" >input1.jsp</result>
             <result name="examenes">examenProfesor.jsp</result>
         </action>
-           <action name="EMW" method="execute" class="actionsupportpackage.EditMW">
+        
+        <action name="EMW" method="execute" class="actionsupportpackage.EditMW">
             <result name="success" >modifica_missing.jsp</result>
         </action>
     </package>

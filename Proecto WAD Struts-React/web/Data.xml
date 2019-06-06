@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Data>
   <examenes />
-  <pregunta idpreg="1">
+  <pregunta idpreg="1" tipo="1">
     <nombre>prueba</nombre>
-    <texto>pimpon es un &amp;</texto>
+    <texto>pimpon es un &amp; muy &amp;</texto>
     <grupo idgroup="1">
       <opciones>
         <op>muñeco</op>
-        <op>titere</op>
-        <op>futbolista</op>
-        <op>ingeniero</op>
+        <op>tigre</op>
+        <op>oso</op>
+        <op>niño</op>
+      </opciones>
+    </grupo>
+    <grupo idgroup="2">
+      <opciones>
+        <op>grande</op>
+        <op>chico</op>
+        <op>latoso</op>
+        <op>pequeño</op>
       </opciones>
     </grupo>
   </pregunta>
-  <pregunta idpreg="2">
+  <pregunta idpreg="2" tipo="1">
     <nombre>hola</nombre>
     <texto>jaja &amp; as &amp; jajaja</texto>
     <grupo idgroup="1">
@@ -33,7 +41,7 @@
       </opciones>
     </grupo>
   </pregunta>
-  <pregunta idpreg="3">
+  <pregunta idpreg="3" tipo="1">
     <nombre>dos</nombre>
     <texto>a nu ma &amp;</texto>
     <grupo idgroup="1">
@@ -65,4 +73,8 @@
     <testID>2</testID>
     <testID>3</testID>
   </quiz>
+  <pregunta idpreg="4" tipo="2">
+    <nombre>Hola</nombre>
+    <texto>Hola esto es un ejemplo Alex Said otra cosa WAD Ejemplo</texto>
+  </pregunta>
 </Data>

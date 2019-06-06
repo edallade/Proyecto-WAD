@@ -44,7 +44,7 @@
 
         <h3>Profesor: <%=user%></h3>
         <br><h1>Creador Sequencing</h1>
-        <br><div id="app"></div>
+        <br><div id="c"></div>
         <script  type="text/babel" src="Sequencing.jsx">
 
 
