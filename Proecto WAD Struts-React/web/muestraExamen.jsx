@@ -32,7 +32,7 @@ class Muestra extends React.Component{
             opciones: [],
             eleccion: [],
             mensaje:'',
-            calif: false, 
+            calif: false
             
         };
          this.handleChange = this.handleChange.bind(this);
@@ -68,7 +68,7 @@ class Muestra extends React.Component{
       text_array.pop();
       let grupos = preguntas[num_preg-1].getElementsByTagName("grupo");
       console.log(text_array);
-   
+   o.splice(0,o.length);
     for(var i=0;i < grupos.length;i++){
         opts=grupos[i].getElementsByTagName("op");
          for(var j=0;j<opts.length;j++){
@@ -92,13 +92,15 @@ class Muestra extends React.Component{
 }
    
     handleChange(event){
-   
+       // seleccionadas.pop();
+ 
    seleccionadas.push(event.target.value);
    console.log(seleccionadas);
   }
   
   handlerClick(){
       var auxState =true;
+      var prom = 0;
       for(var i =0;i<correctas.length;i++){
           if(seleccionadas[i]!== correctas[i])
               auxState=false;
@@ -108,16 +110,26 @@ class Muestra extends React.Component{
       if(auxState===true){
             alert("correcto");
         calificacion++;
+        
         }
       else{ 
             alert("incorrecto");
         }
-        seleccionadas=[];
+        seleccionadas.splice(0,seleccionadas.length);
+        console.log(tam.length);
+        prom = (calificacion * 4) / 10;
         this.setState({
-        count: calificacion
+        count: prom
         });
+        
   }
   siguiente(e){
+      this.setState({ nombre: '',
+            text: [],
+            opciones: [],
+            eleccion: [],
+            mensaje:'',
+            calif: false});
       preguntaActual++;
       if(preguntaActual > tam.length){
           alert("Hasta aqui termina el examen");
@@ -156,7 +168,7 @@ class Muestra extends React.Component{
              correctas.push(opts[0].textContent);
         }
       }
-         
+         this.forceUpdate();
 
           console.log(correctas+" respuestas correctas");
       this.setState({
@@ -164,13 +176,20 @@ class Muestra extends React.Component{
           text: text_array,
           opciones: ar
       });
-
+this.forceUpdate();
   });
       }
       e.preventDefault();
+      correctas=new Array();
   }
   
  atras(e){
+     this.setState({ nombre: '',
+            text: [],
+            opciones: [],
+            eleccion: [],
+            mensaje:'',
+            calif: false});
       preguntaActual--;
       if(preguntaActual < 0){
           alert("Hasta aqui termina el examen");
