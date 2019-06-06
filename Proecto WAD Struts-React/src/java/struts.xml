@@ -18,6 +18,7 @@
             <result name="input" >input1.jsp</result>
             <result name="examenprofesor">profesor.jsp</result>
         </action>
+        
         <action name="eliminarExamen" method="execute" class="actionsupportpackage.EliminarExamen">
             <result name="success" >output1.jsp</result>
             <result name="input" >input1.jsp</result>
@@ -40,7 +41,10 @@
         
         <action name="edita" method="execute" class="actionsupportpackage.editaPreg">
             <result name="success" >profesor.jsp</result>
-            
+        </action>
+        
+        <action name="editaSeq" method="execute" class="actionsupportpackage.editaSeq">
+            <result name="success" >profesor.jsp</result>
         </action>
         
         <action name="verEjercicio" method="execute" class="actionsupportpackage.verEjercicio">
@@ -58,16 +62,20 @@
         <action name="EMW" method="execute" class="actionsupportpackage.EditMW">
             <result name="success" >modifica_missing.jsp</result>
         </action>
-        		<action name="Upload" class="actionsupportpackage.Upload">
-                   <interceptor-ref name="fileUpload">
-                    <param name="maximumSize">2097152</param>
-                    <param name="allowedTypes">
+        
+        <action name="editSeq" method="execute" class="actionsupportpackage.EditSeq">
+            <result name="success" >modifica_missing.jsp</result>
+        </action>
+        
+        <action name="Upload" class="actionsupportpackage.Upload">
+            <interceptor-ref name="fileUpload">
+                <param name="maximumSize">2097152</param>
+                <param name="allowedTypes">
                     image/png,image/gif,image/jpeg,image/pjpeg
-                    </param>
-                   </interceptor-ref>
-                <interceptor-ref name="defaultStack"></interceptor-ref>                 
-        	<result name="exitoso">/profesor.jsp</result>
-        	                
-		</action>
+                </param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>                 
+            <result name="exitoso">/profesor.jsp</result>  	                
+        </action>
     </package>
 </struts>

@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Data>
-  <examenes/>
+  <examenes />
   <pregunta idpreg="1" tipo="1">
     <nombre>prueba</nombre>
     <texto>pimpon es un &amp; muy &amp;</texto>
@@ -41,6 +41,26 @@
       </opciones>
     </grupo>
   </pregunta>
+  <pregunta idpreg="3" tipo="1">
+    <nombre>hola</nombre>
+    <texto>Hola &amp; as &amp; jajaja</texto>
+    <grupo idgroup="1">
+      <opciones>
+        <op>1</op>
+        <op>2</op>
+        <op>3</op>
+        <op>4</op>
+      </opciones>
+    </grupo>
+    <grupo idgroup="2">
+      <opciones>
+        <op>5</op>
+        <op>6</op>
+        <op>7</op>
+        <op>8</op>
+      </opciones>
+    </grupo>
+  </pregunta>
   <quiz quizID="1">
     <name>Said</name>
     <testID>1</testID>
@@ -63,6 +83,10 @@
   </quiz>
   <pregunta idpreg="4" tipo="2">
     <nombre>Hola</nombre>
-    <texto>Hola esto es un ejemplo Alex Said otra cosa WAD Ejemplo</texto>
+    <texto>Hola esto es un ejemplo Alex Said otra cosa WAD Ejemplo Alexillo Gis</texto>
+  </pregunta>
+  <pregunta idpreg="5" tipo="2">
+    <nombre>Alex</nombre>
+    <texto>Alexillo Sais Alexis</texto>
   </pregunta>
 </Data>
