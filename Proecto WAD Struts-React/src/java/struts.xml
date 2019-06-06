@@ -58,5 +58,16 @@
         <action name="EMW" method="execute" class="actionsupportpackage.EditMW">
             <result name="success" >modifica_missing.jsp</result>
         </action>
+        		<action name="Upload" class="actionsupportpackage.Upload">
+                   <interceptor-ref name="fileUpload">
+                    <param name="maximumSize">2097152</param>
+                    <param name="allowedTypes">
+                    image/png,image/gif,image/jpeg,image/pjpeg
+                    </param>
+                   </interceptor-ref>
+                <interceptor-ref name="defaultStack"></interceptor-ref>                 
+        	<result name="exitoso">/profesor.jsp</result>
+        	                
+		</action>
     </package>
 </struts>
