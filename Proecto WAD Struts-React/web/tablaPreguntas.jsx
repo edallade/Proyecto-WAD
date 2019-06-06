@@ -76,9 +76,7 @@ function myFunction(xml) {
             tabla += "</td><td>";
             tabla += "Sequencing";
             tabla += "</td><td>";
-            tabla += "<form action='verSequencing' method='post'>  ";
-            tabla += "<button name='idRef' type='submit' value=" + tests[i].getAttribute("idpreg") + " class='btn-ghost round'>Ver pregunta</button>";
-            tabla += "</form>";
+            tabla += "<a href='verSequen.jsp?idRef="+tests[i].getAttribute("idpreg")+"' class='btn-ghost round'>Ver Pregunta</a>"
             tabla += "</td><td>";
             tabla += "<form action='modSequencing' method='post'>  ";
             tabla += "<button name='idRef' type='submit' value=" + tests[i].getAttribute("idpreg") + " class='btn-ghost round'>Modificar pregunta</button>";

@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Data>
-  <examenes />
+  <examenes/>
   <pregunta idpreg="1" tipo="1">
     <nombre>prueba</nombre>
     <texto>pimpon es un &amp; muy &amp;</texto>
@@ -38,18 +38,6 @@
         <op>6</op>
         <op>7</op>
         <op>8</op>
-      </opciones>
-    </grupo>
-  </pregunta>
-  <pregunta idpreg="3" tipo="1">
-    <nombre>dos</nombre>
-    <texto>a nu ma &amp;</texto>
-    <grupo idgroup="1">
-      <opciones>
-        <op>1</op>
-        <op>2</op>
-        <op>3</op>
-        <op>4</op>
       </opciones>
     </grupo>
   </pregunta>
