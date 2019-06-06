@@ -117,7 +117,7 @@ class Muestra extends React.Component{
         }
         seleccionadas.splice(0,seleccionadas.length);
         console.log(tam.length);
-        prom = (calificacion * 4) / 10;
+        prom = (calificacion * 10) / tam.length;
         this.setState({
         count: prom
         });
