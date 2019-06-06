@@ -66,3 +66,87 @@
     <testID>3</testID>
   </quiz>
 </Data>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Data>
+  <examenes/>
+  <pregunta idpreg="1">
+    <nombre>uno</nombre>
+    <texto>esto &amp; es un ejemssssplo &amp;  aaa</texto>
+    <grupo idgroup="1">
+      <opciones>
+        <op>111</op>
+        <op>2</op>
+        <op>33</op>
+        <op>444</op>
+      </opciones>
+    </grupo>
+    <grupo idgroup="2">
+      <opciones>
+        <op>5555555</op>
+        <op>6</op>
+        <op>7</op>
+        <op>aweeeeeeeeeeeee</op>
+      </opciones>
+    </grupo>
+  </pregunta>
+  <pregunta idpreg="2">
+    <nombre>hola</nombre>
+    <texto>un tigre es un &amp; muy &amp;</texto>
+    <grupo idgroup="1">
+      <opciones>
+        <op>felino</op>
+        <op>insecto</op>
+        <op>canino</op>
+        <op>super heroe</op>
+      </opciones>
+    </grupo>
+    <grupo idgroup="2">
+      <opciones>
+        <op>salvaje</op>
+        <op>feliz</op>
+        <op>docil</op>
+        <op>pequenioo</op>
+      </opciones>
+    </grupo>
+  </pregunta>
+  <pregunta idpreg="3">
+    <nombre>dos</nombre>
+    <texto>hola &amp; preguntas &amp;</texto>
+    <grupo idgroup="1">
+      <opciones>
+        <op>uno</op>
+        <op>dos</op>
+        <op>tres</op>
+        <op>cuatro</op>
+      </opciones>
+    </grupo>
+    <grupo idgroup="2">
+      <opciones>
+        <op>cinco</op>
+        <op>seis</op>
+        <op>siete</op>
+        <op>ocho</op>
+      </opciones>
+    </grupo>
+  </pregunta>
+  <quiz quizID="1">
+    <name>Said</name>
+    <testID>2</testID>
+  </quiz>
+  <quiz quizID="2" teacherID="2">
+    <name>Alexillo</name>
+    <testID>1</testID>
+    <testID>2</testID>
+    <testID>3</testID>
+  </quiz>
+  <quiz quizID="3" teacherID="2">
+    <name>Alexis</name>
+    <testID>3</testID>
+  </quiz>
+  <quiz quizID="4" teacherID="2">
+    <name>Ejemplo</name>
+    <testID>1</testID>
+    <testID>2</testID>
+    <testID>3</testID>
+  </quiz>
+</Data>
