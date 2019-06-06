@@ -11,7 +11,7 @@ class Prueba extends React.Component {
     }
     
     sube(e){
-    fetch('http://localhost:8080/Proyecto_WAD_Struts-React', {
+    fetch('http://localhost:8080/Proyecto_WAD_Struts-React/ServletUpload', {
  // content-type header should not be specified!
     method: 'POST',
     body: document.getElementById("archivo").files[0]
@@ -27,7 +27,7 @@ class Prueba extends React.Component {
     render(){
         return(
                 <div>
-        <form actions="#">
+        <form actions="">
         <input type="file" id="archivo" accept="image/x-png"/>
         <button onClick={this.sube} id="bot">subir archivo</button>
         </form>
