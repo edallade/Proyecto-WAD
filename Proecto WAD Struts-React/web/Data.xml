@@ -1,69 +1,55 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Data>
-  <examenes/>
+  <examenes />
   <pregunta idpreg="1">
-    <nombre>uno</nombre>
-    <texto>esto &amp; es un ejemssssplo &amp;  aaa</texto>
+    <nombre>prueba</nombre>
+    <texto>pimpon es un &amp;</texto>
     <grupo idgroup="1">
       <opciones>
-        <op>111</op>
-        <op>2</op>
-        <op>33</op>
-        <op>444</op>
-      </opciones>
-    </grupo>
-    <grupo idgroup="2">
-      <opciones>
-        <op>5555555</op>
-        <op>6</op>
-        <op>7</op>
-        <op>aweeeeeeeeeeeee</op>
+        <op>muñeco</op>
+        <op>titere</op>
+        <op>futbolista</op>
+        <op>ingeniero</op>
       </opciones>
     </grupo>
   </pregunta>
   <pregunta idpreg="2">
     <nombre>hola</nombre>
-    <texto>un tigre es un &amp; muy &amp;</texto>
+    <texto>jaja &amp; as &amp; jajaja</texto>
     <grupo idgroup="1">
       <opciones>
-        <op>felino</op>
-        <op>insecto</op>
-        <op>canino</op>
-        <op>super heroe</op>
+        <op>1</op>
+        <op>2</op>
+        <op>3</op>
+        <op>4</op>
       </opciones>
     </grupo>
     <grupo idgroup="2">
       <opciones>
-        <op>salvaje</op>
-        <op>feliz</op>
-        <op>docil</op>
-        <op>pequenioo</op>
+        <op>5</op>
+        <op>6</op>
+        <op>7</op>
+        <op>8</op>
       </opciones>
     </grupo>
   </pregunta>
   <pregunta idpreg="3">
     <nombre>dos</nombre>
-    <texto>hola &amp; preguntas &amp;</texto>
+    <texto>a nu ma &amp;</texto>
     <grupo idgroup="1">
       <opciones>
-        <op>uno</op>
-        <op>dos</op>
-        <op>tres</op>
-        <op>cuatro</op>
-      </opciones>
-    </grupo>
-    <grupo idgroup="2">
-      <opciones>
-        <op>cinco</op>
-        <op>seis</op>
-        <op>siete</op>
-        <op>ocho</op>
+        <op>1</op>
+        <op>2</op>
+        <op>3</op>
+        <op>4</op>
       </opciones>
     </grupo>
   </pregunta>
   <quiz quizID="1">
     <name>Said</name>
+    <testID>1</testID>
     <testID>2</testID>
+    <testID>3</testID>
   </quiz>
   <quiz quizID="2" teacherID="2">
     <name>Alexillo</name>

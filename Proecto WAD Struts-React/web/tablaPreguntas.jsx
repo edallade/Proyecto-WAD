@@ -49,7 +49,9 @@ function myFunction(xml) {
         tabla += "<button name='idRef' type='submit' value=" + tests[i].getAttribute("idpreg") + " class='btn-ghost round'>Ver pregunta</button>";
         tabla += "</form>";
         tabla += "</td><td>";
+        tabla += "<form action='EMW' method='post'>  ";
         tabla += "<button name='idRef' type='submit' value=" + tests[i].getAttribute("idpreg") + " class='btn-ghost round'>Modificar pregunta</button>";
+        tabla += "</form>";      
         tabla += "</td><td>";
         tabla += "<form action='eliminarEjercicio' method='post'>  ";
         tabla += "<button name='idRef' type='submit' value=" + tests[i].getAttribute("idpreg") + " class='btn-ghost round'>Eliminar pregunta</button>";

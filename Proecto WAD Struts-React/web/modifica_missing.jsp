@@ -1,30 +1,27 @@
-<%-- 
-    Document   : creaSequencing
-    Created on : 31-may-2019, 11:46:07
-    Author     : saidsoria
---%>
 
-<%@taglib  uri="/struts-tags" prefix="s" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Creador de Preguntas Sequencing</title>
+        <title>Editar Pregunta</title>
         <link rel="stylesheet" type="text/css" href="css/fondos.css"/>
     </head>
     <body>
         <script src="React/react.development.js" crossorigin=""></script>
         <script src="React/react-dom.development.js" crossorigin=""></script>
-        <script src="React/babel.min.js" crossorigin=""></script>
-    <body>
-        
-        <%String user = (String) request.getSession().getAttribute("sesionusuario");
-         
-        %>
+        <script src="React/babel.min.js" crossorigin=""></script> 
 
         <!---------------------------MENÚ----------------------------->
+        <%String idRef = (String) request.getSession().getAttribute("valorPreg");%>
+
+        <%String user = (String) request.getSession().getAttribute("sesionusuario");
+            if (user == null) {
+                response.sendRedirect("input1.jsp");
+            }
+        %>
         <div id="header">
+            <%=idRef%>
             <ul class="nav">
                 <li><a href="profesor.jsp">Preguntas</a>
                     <ul>
@@ -42,12 +39,9 @@
         </div><br><br><br><br>
         <!---------------------------MENÚ----------------------------->
 
-        <h3>Profesor: <%=user%></h3>
-        <br><h1>Creador Sequencing</h1>
-        <br><div id="app"></div>
-        <script  type="text/babel" src="Sequencing.jsx">
+        <div id="mod">
 
-
-        </script>
-    </body>
+        </div>
+        <script type="text/babel" src="mod_missing.jsx"></script>    </body>
+    <input type="text" value="<%=idRef%>" hidden="true" id="numPreg"/>
 </html>
