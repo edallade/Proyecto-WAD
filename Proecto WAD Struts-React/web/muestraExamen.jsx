@@ -17,7 +17,7 @@ const l ={
     </div>
     );
     }
-}
+};
 class Muestra extends React.Component{
     getInitialState() {
         return {
@@ -32,13 +32,13 @@ class Muestra extends React.Component{
             opciones: [],
             eleccion: [],
             mensaje:'',
-            calif: false,
-            tama: ''       
+            calif: false, 
             
         };
          this.handleChange = this.handleChange.bind(this);
          this.handlerClick = this.handlerClick.bind(this);
          this.siguiente = this.siguiente.bind(this);
+         this.atras = this.atras.bind(this);
     }
         componentWillMount ()  {
        
@@ -85,7 +85,6 @@ class Muestra extends React.Component{
           nombre : name,
           text: text_array,
           opciones: o,
-          tama : "1"
       });
 
   });
@@ -112,7 +111,6 @@ class Muestra extends React.Component{
         }
       else{ 
             alert("incorrecto");
-            calificacion--;
         }
         seleccionadas=[];
         this.setState({
@@ -130,16 +128,9 @@ class Muestra extends React.Component{
   
   .then(str => (new  window.DOMParser()).parseFromString(str, "text/xml"))
   .then(data => {
-     var compara = parseInt(document.getElementById("numExam").value,10);
-     var num_preg = parseInt(document.getElementById("numExam").value,10);
+     var num_preg = tam[preguntaActual].textContent;
      console.log(num_preg);
-     var tests = data.getElementsByTagName("quiz");
-     for(var j = 0; j < tests.length; j++){
-         if(tests[j].getAttribute("quizID") === document.getElementById("numExam").value ){
-          tam = tests[j].getElementsByTagName("testID");
-         }
-    }
-      num_preg = tam[preguntaActual].textContent;
+      
       var opts;
       var text_array;
       let preguntas = data.getElementsByTagName("pregunta");
@@ -151,9 +142,65 @@ class Muestra extends React.Component{
       text_array.pop();
       let grupos = preguntas[num_preg-1].getElementsByTagName("grupo");
       console.log(text_array);
-   
+   o.splice(0,o.length);
+        console.log(o);
+        var ar = new Array();
     for(var i=0;i < grupos.length;i++){
         opts=grupos[i].getElementsByTagName("op");
+        
+         for(var j=0;j<opts.length;j++){
+             
+             ar.push(opts[j].textContent); 
+             console.log(ar);
+             if(j<1)
+             correctas.push(opts[0].textContent);
+        }
+      }
+         
+
+          console.log(correctas+" respuestas correctas");
+      this.setState({
+          nombre : name,
+          text: text_array,
+          opciones: ar
+      });
+
+  });
+      }
+      e.preventDefault();
+  }
+  
+ atras(e){
+      preguntaActual--;
+      if(preguntaActual < 0){
+          alert("Hasta aqui termina el examen");
+          preguntaActual = 0;
+      }
+      else{
+     fetch('Data.xml')//CAMBIAR DEPENDIENDO DEL SERVIDOR
+  .then(response => response.text())
+  
+  .then(str => (new  window.DOMParser()).parseFromString(str, "text/xml"))
+  .then(data => {
+     var num_preg = tam[preguntaActual].textContent;
+     console.log(num_preg);
+      
+      var opts;
+      var text_array;
+      let preguntas = data.getElementsByTagName("pregunta");
+      console.log(preguntas);
+      let name =preguntas[num_preg-1].getElementsByTagName("nombre")[0].textContent;
+      let texto = preguntas[num_preg-1].getElementsByTagName("texto")[0].textContent;
+      text_array = texto.split("&");
+      var long = text_array.length;
+      text_array.pop();
+      let grupos = preguntas[num_preg-1].getElementsByTagName("grupo");
+      console.log(text_array);
+   o.splice(0,o.length);
+        console.log(o);
+    for(var i=0;i < grupos.length;i++){
+        opts=grupos[i].getElementsByTagName("op");
+        
          for(var j=0;j<opts.length;j++){
              
              o.push(opts[j].textContent);   
@@ -167,12 +214,12 @@ class Muestra extends React.Component{
       this.setState({
           nombre : name,
           text: text_array,
-          opciones: o,
-          tama : "1"
+          opciones: o
       });
 
   });
-      }   
+      }
+      e.preventDefault();
   }
  
     render(){
@@ -192,6 +239,7 @@ class Muestra extends React.Component{
 
         <br/><br/> <button onClick={this.handlerClick} class='btn-ghost round'>Calificar</button>
                 <br/><br/> <button onClick={this.siguiente} class='btn-ghost round'>Siguiente</button>
+                <br/><br/> <button onClick={this.atras} class='btn-ghost round'>Atras</button>
                         <Counter display={this.state.count}/>
             </div>
             
