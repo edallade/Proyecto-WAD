@@ -47,10 +47,11 @@
     <testID>3</testID>
   </quiz>
   <quiz quizID="2" teacherID="2" tipo="2">
-    <name>multimedios2</name>
+    <name>Multimedios 2</name>
     <testID>5</testID>
     <testID>6</testID>
     <testID>7</testID>
+    <testID>8</testID>
   </quiz>
   <pregunta idpreg="4" tipo="1">
     <nombre>escudo</nombre>

@@ -26,7 +26,6 @@
             }
         %>
         <div id="header">
-            <%=idRef%>
             <ul class="nav">
                 <li><a href="profesor.jsp">Preguntas</a>
                     <ul>
@@ -41,7 +40,7 @@
                 </li>
                 <li><a href="signout.jsp">Cerrar Sesión</a></li>
             </ul>
-        </div><br><br><br><br>
+        </div><br><br><br><br><br><br><br>
         <!---------------------------MENÚ----------------------------->
  <div id="media"></div>
         <div id="app">
