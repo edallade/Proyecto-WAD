@@ -40,11 +40,17 @@
       </opciones>
     </grupo>
   </pregunta>
-  <quiz quizID="1" teacherID="2">
+  <quiz quizID="1" teacherID="2" tipo="1">
     <name>multimedios</name>
     <testID>1</testID>
     <testID>2</testID>
     <testID>3</testID>
+  </quiz>
+  <quiz quizID="2" teacherID="2" tipo="2">
+    <name>multimedios2</name>
+    <testID>5</testID>
+    <testID>6</testID>
+    <testID>7</testID>
   </quiz>
   <pregunta idpreg="4" tipo="1">
     <nombre>escudo</nombre>

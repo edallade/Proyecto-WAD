@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Ver Pregunta</title>
+        <title>Probar Examen Sequency</title>
         <link rel="stylesheet" type="text/css" href="css/fondos.css"/>
     </head>
     <body>
@@ -26,6 +26,7 @@
             }
         %>
         <div id="header">
+            <%=idRef%>
             <ul class="nav">
                 <li><a href="profesor.jsp">Preguntas</a>
                     <ul>
@@ -40,13 +41,15 @@
                 </li>
                 <li><a href="signout.jsp">Cerrar Sesión</a></li>
             </ul>
-        </div><br><br><br><br><br><br><br>
+        </div><br><br><br><br>
         <!---------------------------MENÚ----------------------------->
-        <div id="media"></div><br><br>
+ <div id="media"></div>
         <div id="app">
+            
+        </div>
+       <div id="muestra">
 
         </div>
-        
-        <script type="text/babel" src="verSeq.jsx"></script>    </body>
-    <input type="text" value="<%=idRef%>" hidden="true" id="numPreg"/>
+        <script type="text/babel" src="muestraExamenS.jsx"></script>    </body>
+    <input type="text" value="<%=idRef%>" hidden="true" id="numExam"/>
 </html>

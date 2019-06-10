@@ -40,6 +40,8 @@ class Muestra extends React.Component{
          this.handlerClick = this.handlerClick.bind(this);
          this.siguiente = this.siguiente.bind(this);
          this.atras = this.atras.bind(this);
+         this.principio = this.principio.bind(this);
+         this.alfinale = this.alfinale.bind(this);
     }
         componentWillMount ()  {
        
@@ -52,6 +54,7 @@ class Muestra extends React.Component{
      var num_preg = parseInt(document.getElementById("numExam").value,10);
      console.log(num_preg);
      var tests = data.getElementsByTagName("quiz");
+     
      for(var j = 0; j < tests.length; j++){
          if(tests[j].getAttribute("quizID") === document.getElementById("numExam").value ){
           tam = tests[j].getElementsByTagName("testID");
@@ -309,7 +312,158 @@ this.forceUpdate();
       }
       e.preventDefault();
   }
- 
+ principio(e){
+     this.setState({ nombre: '',
+            text: [],
+            opciones: [],
+            eleccion: [],
+            mensaje:'',
+            media:'',
+            calif: false});
+      preguntaActual=0;
+      
+     fetch('Data.xml')//CAMBIAR DEPENDIENDO DEL SERVIDOR
+  .then(response => response.text())
+  
+  .then(str => (new  window.DOMParser()).parseFromString(str, "text/xml"))
+  .then(data => {
+     var num_preg = tam[preguntaActual].textContent;
+     console.log(num_preg);
+      
+      var opts;
+      var text_array;
+      let preguntas = data.getElementsByTagName("pregunta");
+      console.log(preguntas);
+      let name =preguntas[num_preg-1].getElementsByTagName("nombre")[0].textContent;
+      let texto = preguntas[num_preg-1].getElementsByTagName("texto")[0].textContent;
+      let m = preguntas[num_preg-1].getElementsByTagName("media")[0].textContent;
+                   let extencion = m.split(".").pop();//obtener la extencion del archivo
+           var typeM, aux;
+           if(extencion==="jpeg"||extencion==="jpg"||extencion==="png"){
+                typeM =  "<image width='320'height='240' src='media/"+m+"'/>";
+           }
+           else if (extencion==="mp3"||extencion==="wav"){
+                typeM = "<audio controls><source src='media/"+m+"' type='audio/"+extencion+"'></audio>";
+           }
+           else if (extencion==="mpeg"||extencion==="mp4"||extencion==="wmv"){
+               if(extencion==="wmv"){
+                    aux = "video/x-ms-wmv";
+               }
+                  else{
+                      aux="video/mp4";
+                  }
+                typeM = "<video width='320'height='240' controls> <source src='media/"+m+"' type='"+aux+"'></video>";
+           }
+           
+     console.log(typeM);
+          document.getElementById("media").innerHTML = typeM;
+      text_array = texto.split("&");
+      var long = text_array.length;
+      text_array.pop();
+      let grupos = preguntas[num_preg-1].getElementsByTagName("grupo");
+      console.log(text_array);
+   o.splice(0,o.length);
+        console.log(o);
+    for(var i=0;i < grupos.length;i++){
+        opts=grupos[i].getElementsByTagName("op");
+        
+         for(var j=0;j<opts.length;j++){
+             
+             o.push(opts[j].textContent);   
+             if(j<1)
+             correctas.push(opts[0].textContent);
+        }
+      }
+          
+
+          console.log(correctas+" respuestas correctas");
+      this.setState({
+          nombre : name,
+          text: text_array,
+          opciones: o,
+          media:aux
+      });
+
+  });
+      
+      e.preventDefault();
+  }
+ alfinale(e){
+     this.setState({ nombre: '',
+            text: [],
+            opciones: [],
+            eleccion: [],
+            mensaje:'',
+            media:'',
+            calif: false});
+      preguntaActual=tam.length - 1;
+      
+     fetch('Data.xml')//CAMBIAR DEPENDIENDO DEL SERVIDOR
+  .then(response => response.text())
+  
+  .then(str => (new  window.DOMParser()).parseFromString(str, "text/xml"))
+  .then(data => {
+     var num_preg = tam[preguntaActual].textContent;
+     console.log(num_preg);
+      
+      var opts;
+      var text_array;
+      let preguntas = data.getElementsByTagName("pregunta");
+      console.log(preguntas);
+      let name =preguntas[num_preg-1].getElementsByTagName("nombre")[0].textContent;
+      let texto = preguntas[num_preg-1].getElementsByTagName("texto")[0].textContent;
+      let m = preguntas[num_preg-1].getElementsByTagName("media")[0].textContent;
+                   let extencion = m.split(".").pop();//obtener la extencion del archivo
+           var typeM, aux;
+           if(extencion==="jpeg"||extencion==="jpg"||extencion==="png"){
+                typeM =  "<image width='320'height='240' src='media/"+m+"'/>";
+           }
+           else if (extencion==="mp3"||extencion==="wav"){
+                typeM = "<audio controls><source src='media/"+m+"' type='audio/"+extencion+"'></audio>";
+           }
+           else if (extencion==="mpeg"||extencion==="mp4"||extencion==="wmv"){
+               if(extencion==="wmv"){
+                    aux = "video/x-ms-wmv";
+               }
+                  else{
+                      aux="video/mp4";
+                  }
+                typeM = "<video width='320'height='240' controls> <source src='media/"+m+"' type='"+aux+"'></video>";
+           }
+           
+     console.log(typeM);
+          document.getElementById("media").innerHTML = typeM;
+      text_array = texto.split("&");
+      var long = text_array.length;
+      text_array.pop();
+      let grupos = preguntas[num_preg-1].getElementsByTagName("grupo");
+      console.log(text_array);
+   o.splice(0,o.length);
+        console.log(o);
+    for(var i=0;i < grupos.length;i++){
+        opts=grupos[i].getElementsByTagName("op");
+        
+         for(var j=0;j<opts.length;j++){
+             
+             o.push(opts[j].textContent);   
+             if(j<1)
+             correctas.push(opts[0].textContent);
+        }
+      }
+          
+
+          console.log(correctas+" respuestas correctas");
+      this.setState({
+          nombre : name,
+          text: text_array,
+          opciones: o,
+          media:aux
+      });
+
+  });
+      
+      e.preventDefault();
+  }
     render(){
      
        
@@ -328,8 +482,11 @@ this.forceUpdate();
         ))} 
 
         <br/><br/> <button onClick={this.handlerClick} class='btn-ghost round'>Calificar</button>
-                <br/><br/> <button onClick={this.siguiente} class='btn-ghost round'>Siguiente</button>
-                <br/><br/> <button onClick={this.atras} class='btn-ghost round'>Atras</button>
+                <br/><br/> 
+                <button onClick={this.principio} class='btn-ghost round'>Principio</button>
+                <button onClick={this.siguiente} class='btn-ghost round'>Siguiente</button>
+                <button onClick={this.atras} class='btn-ghost round'>Atras</button>
+                <button onClick={this.alfinale} class='btn-ghost round'>Final</button>
                         <Counter display={this.state.count}/>
             </div>
             
