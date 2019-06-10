@@ -45,39 +45,36 @@ var ArrayData = [];
 var RandList = [];
 var auxSelectArray = [];
 var selectMWArray = [];
-var quizQ="";
+var quizQ = "";
 var tam = "";
-var m="";
+var m = "";
 function myFunction(xml) {
     var xmlDoc = xml.responseXML;
     var tests = xmlDoc.getElementsByTagName("pregunta");
-    for(var j = 0; j < tests.length; j++){
-         if(tests[j].getAttribute("idpreg") === document.getElementById("numPreg").value ){
-         quizQ = tests[j].getElementsByTagName("nombre")[0].textContent;
-          tam = tests[j].getElementsByTagName("texto")[0].textContent;
-          m= tests[j].getElementsByTagName("media")[0].textContent;
-         }
+    for (var j = 0; j < tests.length; j++) {
+        if (tests[j].getAttribute("idpreg") === document.getElementById("numPreg").value) {
+            quizQ = tests[j].getElementsByTagName("nombre")[0].textContent;
+            tam = tests[j].getElementsByTagName("texto")[0].textContent;
+            m = tests[j].getElementsByTagName("media")[0].textContent;
+        }
     }
-           let extencion = m.split(".").pop();//obtener la extencion del archivo
-           var typeM, aux;
-           if(extencion==="jpeg"||extencion==="jpg"||extencion==="png"){
-                typeM =  "<image width='320'height='240' src='media/"+m+"'/>";
-           }
-           else if (extencion==="mp3"||extencion==="wav"){
-                typeM = "<audio controls><source src='media/"+m+"' type='audio/"+extencion+"'></audio>";
-           }
-           else if (extencion==="mpeg"||extencion==="mp4"||extencion==="wmv"){
-               if(extencion==="wmv"){
-                    aux = "video/x-ms-wmv";
-               }
-                  else{
-                      aux="video/mp4";
-                  }
-                typeM = "<video width='320'height='240' controls> <source src='media/"+m+"' type='"+aux+"'></video>";
-           }
-           
-     console.log(typeM);
-          document.getElementById("media").innerHTML = typeM;
+    let extencion = m.split(".").pop();//obtener la extencion del archivo
+    var typeM, aux;
+    if (extencion === "jpeg" || extencion === "jpg" || extencion === "png") {
+        typeM = "<image width='320'height='240' src='media/" + m + "'/>";
+    } else if (extencion === "mp3" || extencion === "wav") {
+        typeM = "<audio controls><source src='media/" + m + "' type='audio/" + extencion + "'></audio>";
+    } else if (extencion === "mpeg" || extencion === "mp4" || extencion === "wmv") {
+        if (extencion === "wmv") {
+            aux = "video/x-ms-wmv";
+        } else {
+            aux = "video/mp4";
+        }
+        typeM = "<video width='320'height='240' controls> <source src='media/" + m + "' type='" + aux + "'></video>";
+    }
+
+    console.log(typeM);
+    document.getElementById("media").innerHTML = typeM;
     title = "";
     auxSelect = "";
     auxSelectArray = [];
@@ -119,7 +116,7 @@ function myFunction(xml) {
             console.log(index, randNum, i);
             var aux1 = RandList[i]; //aux1, toma el valor[i] del arreglo de números random, y nos da un número de 0 a n
             var auxS = ArrayData[aux1]; //auxS, toma el valor[aux1] del arreglo de la información obtenida en cada input
-            auxSelect += "<option value='" + aux1 + "'>" + auxS + "</option>";
+            auxSelect += "<option value='" + auxS + "'>" + auxS + "</option>";
         })
         auxSelect += "</select><br>";
         //auxSelectArray, es un arreglo porque necesitamos que todos los select, tengan un orden diferente en sus opciones
@@ -143,7 +140,7 @@ function Contestar(arr1, arr2) {
     calificacionMV = ""
     selectMWArray = []
     var selectMW = []
-    for (var i = 0; i < tamRes - 1; i++) {
+    for (var i = 0; i < tamRes; i++) {
         //En este for recuperamos los valores de las respuestas de cada select y los metemos a selectMWArray[]
         var selectMW =
                 {
@@ -154,19 +151,25 @@ function Contestar(arr1, arr2) {
     }
     var contCorrect = 0
     var totalCalif = 0
+    console.log(selectMWArray.length)
+    console.log(selectMWArray)
 
     selectMWArray.forEach(function (selectm, index) {
-        index = index + 1
-        selectm.index = selectm.index - 1
+        // index = index + 1
+        //selectm.index = selectm.index - 1
         //Aquí comparamos, si el select con "id = 1" tiene como respuesta el "valor = 0", es correcto
         //Nuestra lógica es la siguiente: "id = n" debe tener como respuesta el "valor = n - 1"
-        if (selectm.index != selectm.value) {
+        console.log("selectm ", selectm)
+        console.log("selectMWArray ", selectMWArray)
+        console.log("[", index, "] :", ArrayData[index])
+        if (ArrayData[index] != selectm.value) {
             console.log("Respuesta Incorrecta", index)
         } else {
+            console.log(contCorrect)
             contCorrect++;
         }
     })
-    totalCalif = (contCorrect / (tamRes - 1)) * 10
+    totalCalif = (contCorrect / tamRes) * 10
 
     console.log(selectMWArray)
     calificacionMV = "Calificación: " + totalCalif
@@ -182,4 +185,3 @@ function Contestar(arr1, arr2) {
     //Aquí le pasamos la información de "calificacionMV" a nuestro elemento <p id="calificacion"></p>
     document.getElementById("calificacion").innerHTML = calificacionMV;
 }
-

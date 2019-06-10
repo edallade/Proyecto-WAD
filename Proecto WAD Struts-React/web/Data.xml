@@ -74,4 +74,9 @@
     <texto>uno dos tres cuatro</texto>
     <media>boton-clic-aqui.png</media>
   </pregunta>
+  <pregunta idpreg="8" tipo="2">
+    <nombre>MP3</nombre>
+    <texto>Hola Said Said Gis SAID SaiD</texto>
+    <media>ZZ Top - La Grange.mp3</media>
+  </pregunta>
 </Data>
