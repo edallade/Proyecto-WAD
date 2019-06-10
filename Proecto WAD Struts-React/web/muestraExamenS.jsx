@@ -656,7 +656,7 @@ class Muestra extends React.Component{
                     <p id="final"></p>
 
         <br/><br/> <button onClick={this.handlerClick} class='btn-ghost round'>Calificar</button>
-                <br/><br/> 
+                <br/>
                 <button onClick={this.principio} class='btn-ghost round'>Principio</button>
                 <button onClick={this.siguiente} class='btn-ghost round'>Siguiente</button>
                 <button onClick={this.atras} class='btn-ghost round'>Atras</button>
