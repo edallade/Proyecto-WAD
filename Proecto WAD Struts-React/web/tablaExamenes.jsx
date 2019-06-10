@@ -16,7 +16,7 @@ class MyComponent extends React.Component {
         return(
                 <div id="texto">
                     <a href="crearExamen.jsp?tipo=1"><button class='btn-ghost round'>Crear Examen Missing Words</button></a>
-                    <a href="crearExamen.jsp?tipo=2"><button class='btn-ghost round'>Crear Examen Sequency</button></a>
+                    <a href="crearExamen.jsp?tipo=2"><button class='btn-ghost round'>Crear Examen Sequencing</button></a>
                         <table id="tablad" border="1" class="redTable"></table>
                 </div>
 
