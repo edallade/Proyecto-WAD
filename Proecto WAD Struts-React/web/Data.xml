@@ -60,8 +60,8 @@
     </grupo>
   </pregunta>
   <pregunta idpreg="5" tipo="2">
-    <nombre>prueba sequenci</nombre>
-    <texto>uno dos tres cuatro</texto>
+    <nombre>Prueba Sequencing</nombre>
+    <texto>uno dos tres cuatro cinco</texto>
     <media>tabla merge.png</media>
   </pregunta>
   <pregunta idpreg="6" tipo="2">

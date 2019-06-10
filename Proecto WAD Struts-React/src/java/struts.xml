@@ -7,7 +7,7 @@
 
     <include file="example.xml"/>
     <constant name="struts.multipart.saveDir" value="http://localhost:8080/Proyecto_WAD_Struts-React/media" />
-  <constant name="struts.multipart.maxSize" value="15000000"/>
+    <constant name="struts.multipart.maxSize" value="15000000"/>
    
   
     <!-- Configuration for the default package. -->
@@ -54,6 +54,10 @@
             <result name="success" >profesor.jsp</result>
         </action>
         
+        <action name="editSeq" method="execute" class="actionsupportpackage.EditSeq">
+            <result name="success" >modSeq.jsp</result>
+        </action>
+        
         <action name="verEjercicio" method="execute" class="actionsupportpackage.verEjercicio">
             <result name="success" >output1.jsp</result>
             <result name="input" >input1.jsp</result>
@@ -69,14 +73,14 @@
         <action name="EMW" method="execute" class="actionsupportpackage.EditMW">
             <result name="success" >modifica_missing.jsp</result>
         </action>
-        		<action name="Upload" class="actionsupportpackage.Upload">
-                   <interceptor-ref name="fileUpload">
-                    <param name="maximumSize">50000000</param>
+        <action name="Upload" class="actionsupportpackage.Upload">
+            <interceptor-ref name="fileUpload">
+                <param name="maximumSize">50000000</param>
                  
-                   </interceptor-ref>
-                <interceptor-ref name="defaultStack"></interceptor-ref>                 
-        	<result name="exitoso">/profesor.jsp</result>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>                 
+            <result name="exitoso">/profesor.jsp</result>
         	                
-		</action>
+        </action>
     </package>
 </struts>

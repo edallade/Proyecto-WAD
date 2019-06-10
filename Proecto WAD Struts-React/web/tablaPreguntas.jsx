@@ -43,9 +43,9 @@ function myFunction(xml) {
     var tabla = "<thead><tr><th>ID</th><th>Nombre</th><th>Tipo</th><th>Ver Pregunta</th><th>Modificar Pregunta</th><th>Eliminar Pregunta</th></tr></thead>";
     for (var i = 0; i < tests.length; i++) {
         tipo = tests[i].getAttribute("tipo");
-        console.log("+++++++++++++++++TIPO: ",tipo);
+        console.log("+++++++++++++++++TIPO: ", tipo);
 
-        if (tipo === "1") { 
+        if (tipo === "1") {
             //Missing Words
             tabla += "<tr><td>";
             tabla += tests[i].getAttribute("idpreg");
@@ -76,7 +76,7 @@ function myFunction(xml) {
             tabla += "</td><td>";
             tabla += "Sequencing";
             tabla += "</td><td>";
-            tabla += "<a href='verSequen.jsp?idRef="+tests[i].getAttribute("idpreg")+"' class='btn-ghost round'>Ver Pregunta</a>"
+            tabla += "<a href='verSequen.jsp?idRef=" + tests[i].getAttribute("idpreg") + "' class='btn-ghost round'>Ver Pregunta</a>"
             tabla += "</td><td>";
             tabla += "<form action='editSeq' method='post'>  ";
             tabla += "<button name='idRef' type='submit' value=" + tests[i].getAttribute("idpreg") + " class='btn-ghost round'>Modificar pregunta</button>";

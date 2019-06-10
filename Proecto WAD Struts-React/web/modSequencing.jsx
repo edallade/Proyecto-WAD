@@ -1,19 +1,45 @@
-const style1 = {
-    WIDTH: 350,
-    HEIGHT: 20
-}
-
-const s2 = {
-    WIDTH: 350,
-    HEIGHT: 50
-}
 class Component extends React.Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
+        this.state = {
+            nombre: '',
+            text: [],
+            boolean: true,
+            idPreg: ''
+        }
         this.myFunction = this.myFunction.bind(this);
+        this.cambio = this.cambio.bind(this);
+        this.handlerName = this.handlerName.bind(this);
+    }
+
+    componentWillMount() {
+
+        fetch('Data.xml')//CAMBIAR DEPENDIENDO DEL SERVIDOR
+                .then(response => response.text())
+
+                .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
+                .then(data => {
+                    var num_preg = parseInt(document.getElementById("numPreg").value, 10);
+                    console.log(num_preg);
+
+                    let preguntas = data.getElementsByTagName("pregunta");
+                    console.log(preguntas);
+                    let name = preguntas[num_preg - 1].getElementsByTagName("nombre")[0].textContent;
+                    let texto = preguntas[num_preg - 1].getElementsByTagName("texto")[0].textContent;
+                    console.log(texto + " texto de la pregunta en el xml")
+                    this.setState({
+                        nombre: name,
+                        text: texto,
+                        idPreg: num_preg
+                    });
+
+                });
     }
 
     myFunction() {
+        this.setState({
+            boolean: false
+        });
         var title, txt, res, tamRes, selMV, AuxData, auxSelect, finalMV, calificacionMV;
         var ArrayData = []
         var RandList = []
@@ -64,7 +90,7 @@ class Component extends React.Component {
                     console.log(index, randNum, i);
                     var aux1 = RandList[i]; //aux1, toma el valor[i] del arreglo de números random, y nos da un número de 0 a n
                     var auxS = ArrayData[aux1]; //auxS, toma el valor[aux1] del arreglo de la información obtenida en cada input
-                    auxSelect += "<option value='" + auxS + "'>" + auxS + "</option>";
+                    auxSelect += "<option value='" + aux1 + "'>" + auxS + "</option>";
                 })
                 auxSelect += "</select>";
                 //auxSelectArray, es un arreglo porque necesitamos que todos los select, tengan un orden diferente en sus opciones
@@ -83,29 +109,48 @@ class Component extends React.Component {
             document.getElementById("final").innerHTML = finalMV;
         }
     }
-    render() {
 
-        return (
-                <div id="texto">
-                    <form action="editaSeq" method="post">
-                        <br/><br/>Nombre de la Pregunta:<br/><br/><input placeholder="Nombre de la pregunta" type="text" id="title" name="txt"  />
-                        <br/><br/>Enunciado de la Pregunta:<br/><br/><textarea placeholder="Ejemplo: Escribe cualquier cosa y listo" type="text" id="txt" name="txt2" cols="50" rows="20" ></textarea>
-                
-                
-                
-                
-                        <p id="sel"></p>
-                
-                        <p id="final"></p>
-                
-                        <p id="calificacion"></p>
-                        <br/><br/><input type='submit' value='Guardar' class='btn-ghost round'/>
-                        <input type="text" hidden="true" name="idpreg" value={this.state.idPreg}/>
-                    </form>
-                    <br/><br/><button onClick={this.myFunction} class='btn-ghost round'>Siguiente</button>
-                </div>
-
-                );
+    cambio(e) {
+        this.setState({text: e.target.value});
+    }
+    handlerName(e) {
+        this.setState({nombre: e.target.value});
+    }
+    render()
+    {
+        var aux = this.state.text;
+        if (this.state.boolean) {
+            return (
+                    <div id="texto">
+                        <form action="guarda" method="post"  >
+                            <br/><br/>Nombre de la Pregunta:<br/><br/><input onChange={this.handlerName} defaultValue={this.state.nombre} type="text" id="title" name="txt"  />
+                            <br/><br/>Enunciado de la Pregunta:<br/><br/><textarea  onChange={this.cambio} type="text" id="txt" name="txt2" cols="50" rows="20" defaultValue={this.state.text}></textarea>
+                            <p id="sel"></p>
+                    
+                            <p id="final"></p>  
+                        </form>
+                        <br/><br/><button onClick={this.myFunction} class='btn-ghost round'>Siguiente</button>
+                    </div>
+                    );
+        } else {
+            return (
+                    <div id="texto">
+                        <form action="editaSeq" method="post">
+                            <br/><br/>Nombre de la Pregunta:<br/><br/><input value={this.state.nombre} type="text" id="title" name="txt"  />
+                            <br/><br/>Enunciado de la Pregunta:<br/><br/><textarea  type="text" id="txt" name="txt2" cols="50" rows="20" value={this.state.text}></textarea>
+                            <p id="sel"></p>
+                    
+                            <p id="final"></p>
+                    
+                            <p id="calificacion"></p>
+                            <input type="text" hidden="true" name="idpreg" value={this.state.idPreg}/>
+                            <br/><br/><input type='submit' value='Guardar' class='btn-ghost round'/>
+                    
+                        </form>
+                    
+                    </div>
+                    );
+        }
     }
 }
 ReactDOM.render(<Component />, document.getElementById('c'));

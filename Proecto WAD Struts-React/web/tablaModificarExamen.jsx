@@ -17,7 +17,7 @@ class MyComponent extends React.Component {
         return(
                 <div id="texto">
                     <form action="modificarExamen" method="post">
-                    <br/><br/><p>Nombre del examen: <input type="text" name="nombre" placeholder={document.getElementById("namePreg").value} required/></p>
+                    <br/><br/><h2>Nombre del examen: <input type="text" name="nombre" placeholder={document.getElementById("namePreg").value} required/></h2>
                     <br/><br/><table id="tablad" border="1" class="redTable"></table>
                     <input type="text" name="idExamen" value={document.getElementById("numPreg").value} hidden="true"/>
                         <br/><br/><input type="submit" class='btn-ghost round'/>
@@ -47,7 +47,8 @@ function myFunction(xml) {
     var tests2 = xmlDoc.getElementsByTagName("quiz");
     var tam;
     var quizQ = "<th>Name</th>";
-    var tabla = "<thead><tr><th>ID</th><th>Nombre</th><th>CHECK</th></tr></thead>";
+    var tabla = "<thead><tr><th>ID</th><th>Nombre</th><th>Tipo</th><th>Selección</th></tr></thead>";
+    var tipo = "";
     for(var j = 0; j < tests2.length; j++){
          if(tests2[j].getAttribute("quizID") === document.getElementById("numPreg").value ){
          quizQ = tests2[j].getElementsByTagName("name")[0].textContent;
@@ -55,11 +56,22 @@ function myFunction(xml) {
          }
     }
     for (var i = 0; i < tests.length; i++) {
+        
+        tipo = tests[i].getAttribute("tipo");
+        
         tabla += "<tr><td>";
         tabla += tests[i].getAttribute("idpreg");
         tabla += "</td><td>";
         tabla += tests[i].getElementsByTagName("nombre")[0].textContent;
         tabla += "</td><td>";
+        
+        if (tipo === "1") {
+            tabla += "Missing Words";
+            tabla += "</td><td>";
+        } else {
+            tabla += "Sequencing";
+            tabla += "</td><td>";
+        }
         
         for(var j = 0; j < tam.length; j++){
             if(tam[j].textContent === tests[i].getAttribute("idpreg")){
@@ -76,8 +88,4 @@ function myFunction(xml) {
     }
     document.getElementById("tablad").innerHTML = tabla;
     document.getElementById("nameQ").innerHTML = quizQ;
-}/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+}

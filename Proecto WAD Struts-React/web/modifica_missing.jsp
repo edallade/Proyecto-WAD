@@ -21,7 +21,6 @@
             }
         %>
         <div id="header">
-            <%=idRef%>
             <ul class="nav">
                 <li><a href="profesor.jsp">Preguntas</a>
                     <ul>

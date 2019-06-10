@@ -22,6 +22,7 @@
         <%String user = (String) request.getSession().getAttribute("sesionusuario");
 
         %>
+        <%String idRef = (String) request.getSession().getAttribute("valorPreg");%>
 
         <!---------------------------MENÚ----------------------------->
         <div id="header">
@@ -49,5 +50,7 @@
 
 
         </script>
+
     </body>
+    <input type="text" value="<%=idRef%>" hidden="true" id="numPreg"/>
 </html>

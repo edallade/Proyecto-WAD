@@ -17,7 +17,7 @@ class MyComponent extends React.Component {
         return(
                 <div id="texto">
                     <form action="crearExamen" method="post">
-                        <br/><br/><p>Nombre del examen: <input type="text" name="nombre"/></p>
+                        <br/><br/><h3>Nombre del examen: <input type="text" name="nombre"/></h3>
                         <br/><br/><table id="tablad" border="1" class="redTable"></table>
                         <br/><br/><input type="submit" class='btn-ghost round'/>
                     </form>
@@ -43,7 +43,7 @@ function myFunction(xml) {
     var tests = xmlDoc.getElementsByTagName("pregunta");
     var tipo = "";
 
-    var tabla = "<thead><tr><th>ID</th><th>Nombre</th><th>Tipo</th><th>CHECK</th></tr></thead>";
+    var tabla = "<thead><tr><th>ID</th><th>Nombre</th><th>Tipo</th><th>Selección</th></tr></thead>";
     for (var i = 0; i < tests.length; i++) {
 
         tipo = tests[i].getAttribute("tipo");
