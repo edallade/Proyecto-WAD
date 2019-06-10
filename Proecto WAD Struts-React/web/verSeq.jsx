@@ -61,10 +61,10 @@ function myFunction(xml) {
            let extencion = m.split(".").pop();//obtener la extencion del archivo
            var typeM, aux;
            if(extencion==="jpeg"||extencion==="jpg"||extencion==="png"){
-                typeM =  "<image width='320'height='240' src='http://localhost:8080/Proyecto_WAD_Struts-React/media/"+m+"'/>";
+                typeM =  "<image width='320'height='240' src='media/"+m+"'/>";
            }
            else if (extencion==="mp3"||extencion==="wav"){
-                typeM = "<audio controls><source src='http://localhost:8080/Proyecto_WAD_Struts-React/media/"+m+"' type='audio/"+extencion+"'></audio>";
+                typeM = "<audio controls><source src='media/"+m+"' type='audio/"+extencion+"'></audio>";
            }
            else if (extencion==="mpeg"||extencion==="mp4"||extencion==="wmv"){
                if(extencion==="wmv"){
@@ -73,7 +73,7 @@ function myFunction(xml) {
                   else{
                       aux="video/mp4";
                   }
-                typeM = "<video width='320'height='240' controls> <source src='http://localhost:8080/Proyecto_WAD_Struts-React/media/"+m+"' type='"+aux+"'></video>";
+                typeM = "<video width='320'height='240' controls> <source src='media/"+m+"' type='"+aux+"'></video>";
            }
            
      console.log(typeM);
@@ -183,24 +183,3 @@ function Contestar(arr1, arr2) {
     document.getElementById("calificacion").innerHTML = calificacionMV;
 }
 
-/* let m = preguntas[num_preg-1].getElementsByTagName("media")[0].textContent;
-                   let extencion = m.split(".").pop();//obtener la extencion del archivo
-           var typeM, aux;
-           if(extencion==="jpeg"||extencion==="jpg"||extencion==="png"){
-                typeM =  "<image src='http://localhost:8080/Proyecto_WAD_Struts-React/media/"+m+"'/>";
-           }
-           else if (extencion==="mp3"||extencion==="wav"){
-                typeM = "<audio controls><source src='http://localhost:8080/Proyecto_WAD_Struts-React/media/"+m+"' type='audio/"+extencion+"'></audio>";
-           }
-           else if (extencion==="mpeg"||extencion==="mp4"||extencion==="wmv"){
-               if(extencion==="wmv"){
-                    aux = "video/x-ms-wmv";
-               }
-                  else{
-                      aux="video/mp4";
-                  }
-                typeM = "<video width='320'height='240' controls> <source src='http://localhost:8080/Proyecto_WAD_Struts-React/media/"+m+"' type='"+aux+"'></video>";
-           }
-           
-     console.log(typeM);
-          document.getElementById("media").innerHTML = typeM;*/

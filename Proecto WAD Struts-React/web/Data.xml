@@ -69,4 +69,9 @@
     <texto>el oso es baboso</texto>
     <media>oso.mp4</media>
   </pregunta>
+  <pregunta idpreg="7" tipo="2">
+    <nombre>weewwe2</nombre>
+    <texto>uno dos tres cuatro</texto>
+    <media>boton-clic-aqui.png</media>
+  </pregunta>
 </Data>
