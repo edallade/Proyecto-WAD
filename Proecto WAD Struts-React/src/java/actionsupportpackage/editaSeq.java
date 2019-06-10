@@ -13,9 +13,9 @@ import org.jdom2.input.SAXBuilder;
 import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
 
-public class editaPreg extends ActionSupport {
+public class editaSeq extends ActionSupport {
 
-    public editaPreg() {
+    public editaSeq() {
     }
 
     public String execute() throws Exception {

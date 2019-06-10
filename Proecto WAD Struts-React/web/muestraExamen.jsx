@@ -155,7 +155,7 @@ class Muestra extends React.Component{
             media:'',
             calif: false});
       preguntaActual++;
-      if(preguntaActual > tam.length){
+      if(preguntaActual >= tam.length){
           alert("Hasta aqui termina el examen");
       }
       else{

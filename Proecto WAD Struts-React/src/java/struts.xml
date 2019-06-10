@@ -25,6 +25,7 @@
             <result name="input" >input1.jsp</result>
             <result name="examenprofesor">profesor.jsp</result>
         </action>
+        
         <action name="eliminarExamen" method="execute" class="actionsupportpackage.EliminarExamen">
             <result name="success" >output1.jsp</result>
             <result name="input" >input1.jsp</result>
@@ -47,7 +48,10 @@
         
         <action name="edita" method="execute" class="actionsupportpackage.editaPreg">
             <result name="success" >profesor.jsp</result>
-            
+        </action>
+        
+        <action name="editaSeq" method="execute" class="actionsupportpackage.editaSeq">
+            <result name="success" >profesor.jsp</result>
         </action>
         
         <action name="verEjercicio" method="execute" class="actionsupportpackage.verEjercicio">
