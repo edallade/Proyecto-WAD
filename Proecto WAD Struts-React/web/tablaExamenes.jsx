@@ -5,7 +5,7 @@ class MyComponent extends React.Component {
         this.state = {
             items: [],
             isLoaded: false
-        }
+        };
     }
 
     componentDidMount() {
@@ -15,7 +15,8 @@ class MyComponent extends React.Component {
     render() {
         return(
                 <div id="texto">
-                    <a href="crearExamen.jsp"><button class='btn-ghost round'>Crear Examen</button></a>
+                    <a href="crearExamen.jsp?tipo=1"><button class='btn-ghost round'>Crear Examen Missing Words</button></a>
+                    <a href="crearExamen.jsp?tipo=2"><button class='btn-ghost round'>Crear Examen Sequency</button></a>
                         <table id="tablad" border="1" class="redTable"></table>
                 </div>
 

@@ -18,6 +18,7 @@ class MyComponent extends React.Component {
                 <div id="texto">
                     <form action="crearExamen" method="post">
                         <br/><br/><h3>Nombre del examen: <input type="text" name="nombre"/></h3>
+                        <input type="text" name="tipoExamen" value={document.getElementById("tipoExam").value} hidden="true"/>
                         <br/><br/><table id="tablad" border="1" class="redTable"></table>
                         <br/><br/><input type="submit" class='btn-ghost round'/>
                     </form>
@@ -42,11 +43,13 @@ function myFunction(xml) {
     var xmlDoc = xml.responseXML;
     var tests = xmlDoc.getElementsByTagName("pregunta");
     var tipo = "";
+    var tipoE = document.getElementById("tipoExam").value;
+    console.log(tipoE);
 
     var tabla = "<thead><tr><th>ID</th><th>Nombre</th><th>Tipo</th><th>Selección</th></tr></thead>";
     for (var i = 0; i < tests.length; i++) {
-
-        tipo = tests[i].getAttribute("tipo");
+        if(tests[i].getAttribute("tipo") === tipoE){
+            tipo = tests[i].getAttribute("tipo");
 
         tabla += "<tr><td>";
         tabla += tests[i].getAttribute("idpreg");
@@ -64,6 +67,9 @@ function myFunction(xml) {
 
         tabla += "<input type='checkbox' name='Seleccionado' value='" + tests[i].getAttribute("idpreg") + "'/>";
         tabla += "</td></tr>";
+            
+        }
+        
     }
     document.getElementById("tablad").innerHTML = tabla;
 }

@@ -23,6 +23,7 @@ public class crearExamen extends ActionSupport {
         String xml = request.getSession().getServletContext().getRealPath("/");
         String[] idTest = request.getParameterValues("Seleccionado");
         String ExamenN = (String) request.getParameter("nombre");
+        String tipoExamen = (String) request.getParameter("tipoExamen");
         String idUsuario = (String) request.getSession().getAttribute("userID");
         try {
             //Contruye un documento JDOM usando SAX, para procesar xml
@@ -60,6 +61,7 @@ public class crearExamen extends ActionSupport {
 
             grupoP.setAttribute("quizID", id);
             grupoP.setAttribute("teacherID", idUsuario);
+            grupoP.setAttribute("tipo", tipoExamen);
             nombreG.setText(ExamenN);//setText lo que va entre etiqueta de apertura y cierre
             List lista = QuestionWriter.getChildren("pregunta");
             //Para obtener nombre del profesor

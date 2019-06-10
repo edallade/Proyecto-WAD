@@ -14,6 +14,7 @@
     <body>
 
         <%String user = (String) request.getSession().getAttribute("sesionusuario");
+        String tipoExamen = request.getParameter("tipo");
             if (user == null) {
                 response.sendRedirect("input1.jsp");
             }
@@ -45,5 +46,6 @@
 
 
         </script>
+        <input type="text" value="<%=tipoExamen%>" hidden="true" id="tipoExam"/>
     </body>
 </html>

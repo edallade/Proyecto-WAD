@@ -85,4 +85,26 @@
     <texto>Hola Said Said Gis SAID SaiD</texto>
     <media>ZZ Top - La Grange.mp3</media>
   </pregunta>
+  <quiz quizID="3" teacherID="2" tipo="2">
+    <name>PruebaSequency</name>
+    <testID>5</testID>
+    <testID>6</testID>
+    <testID>7</testID>
+    <testID>8</testID>
+  </quiz>
+  <quiz quizID="4" teacherID="2" tipo="2">
+    <name>PruebaSe1</name>
+    <testID>5</testID>
+    <testID>6</testID>
+  </quiz>
+  <quiz quizID="5" teacherID="2" tipo="1">
+    <name>Hola</name>
+    <testID>1</testID>
+    <testID>2</testID>
+  </quiz>
+  <quiz quizID="6" teacherID="2" tipo="1">
+    <name>Hola</name>
+    <testID>1</testID>
+    <testID>2</testID>
+  </quiz>
 </Data>

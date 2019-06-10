@@ -33,6 +33,7 @@ class Muestra extends React.Component{
         };
          this.handleChange = this.handleChange.bind(this);
          this.handlerClick = this.handlerClick.bind(this);
+         this.Contestar = this.Contestar.bind(this);
          this.siguiente = this.siguiente.bind(this);
          this.atras = this.atras.bind(this);
          this.principio = this.principio.bind(this);
@@ -45,14 +46,6 @@ class Muestra extends React.Component{
   
   .then(str => (new  window.DOMParser()).parseFromString(str, "text/xml"))
   .then(data => {
-      var title, txt, res, tamRes, selMV, AuxData, auxSelect, finalMV, calificacionMV;
-        var ArrayData = [];
-        var RandList = [];
-        var auxSelectArray = [];
-        var selectMWArray = [];
-        var quizQ = "";
-        var tama = "";
-        var m = "";
      var num_preg = parseInt(document.getElementById("numExam").value,10);
      console.log(num_preg);
      var tests1 = data.getElementsByTagName("quiz");
@@ -143,7 +136,6 @@ class Muestra extends React.Component{
         //y element cada select guardado previamente en auxSelectArray
         finalMV += i + 1 + element + "<br>";
     });
-    finalMV += "<br><button onClick='Contestar()' class='btn-ghost round'>Contestar</button>";
     //Aquí le pasamos la información de "finalMV" a nuestro elemento <p id="final"></p>
     document.getElementById("final").innerHTML = finalMV;
 
@@ -157,25 +149,118 @@ class Muestra extends React.Component{
    seleccionadas.push(event.target.value);
    console.log(seleccionadas);
   }
-  
-  handlerClick(){
-      var auxState =true;
-      var prom = 0;
-      for(var i =0;i<correctas.length;i++){
-          if(seleccionadas[i]!== correctas[i])
-              auxState=false;
-              break;
-      }
-      console.log(seleccionadas);
-      if(auxState===true){
-            alert("correcto");
+   Contestar(arr1, arr2){
+      
+      calificacionMV = "";
+    selectMWArray = [];
+    var selectMW = [];
+    for (var i = 0; i < tamRes; i++) {
+        //En este for recuperamos los valores de las respuestas de cada select y los metemos a selectMWArray[]
+        var selectMW =
+                {
+                    index: (i + 1),
+                    value: document.getElementById("" + (i + 1)).value
+                };
+        selectMWArray.push(selectMW);
+    }
+    var contCorrect = 0;
+    var totalCalif = 0;
+    console.log(selectMWArray.length);
+    console.log(selectMWArray);
+
+    selectMWArray.forEach(function (selectm, index) {
+        // index = index + 1
+        //selectm.index = selectm.index - 1
+        //Aquí comparamos, si el select con "id = 1" tiene como respuesta el "valor = 0", es correcto
+        //Nuestra lógica es la siguiente: "id = n" debe tener como respuesta el "valor = n - 1"
+        console.log("selectm ", selectm);
+        console.log("selectMWArray ", selectMWArray);
+        console.log("[", index, "] :", ArrayData[index]);
+        if (ArrayData[index] !== selectm.value) {
+            console.log("Respuesta Incorrecta", index);
+        } else {
+            console.log(contCorrect);
+            contCorrect++;
+        }
+    });
+    totalCalif = (contCorrect / tamRes) * 10;
+
+    console.log(selectMWArray);
+    calificacionMV = "Calificación: " + totalCalif;
+    if (totalCalif <= 5) {
+        alert("Mal, sigue estudiando! ");
+    } else if (totalCalif <= 7) {
+        alert("Casi lo logras, sigue estudiando! ");
+    } else if (totalCalif <= 9) {
+        alert("Estás cerca de lograrlo, sigue estudiando!");
+    } else if (totalCalif === 10) {
+        alert("Excelente!");
         calificacion++;
-        
-        }
-      else{ 
-            alert("incorrecto");
-        }
+    }
+    //Aquí le pasamos la información de "calificacionMV" a nuestro elemento <p id="calificacion"></p>
+    document.getElementById("calificacion").innerHTML = calificacionMV;
+      
+      
         seleccionadas.splice(0,seleccionadas.length);
+        console.log(tam.length);
+        prom = (calificacion * 10) / tam.length;
+        this.setState({
+        count: prom
+        });
+        
+  }
+  
+  handlerClick(arr1, arr2){
+      calificacionMV = "";
+    selectMWArray = [];
+    var selectMW = [];
+    for (var i = 0; i < tamRes; i++) {
+        //En este for recuperamos los valores de las respuestas de cada select y los metemos a selectMWArray[]
+        var selectMW =
+                {
+                    index: (i + 1),
+                    value: document.getElementById("" + (i + 1)).value
+                };
+        selectMWArray.push(selectMW);
+    }
+    var contCorrect = 0;
+    var totalCalif = 0;
+    console.log(selectMWArray.length);
+    console.log(selectMWArray);
+
+    selectMWArray.forEach(function (selectm, index) {
+        // index = index + 1
+        //selectm.index = selectm.index - 1
+        //Aquí comparamos, si el select con "id = 1" tiene como respuesta el "valor = 0", es correcto
+        //Nuestra lógica es la siguiente: "id = n" debe tener como respuesta el "valor = n - 1"
+        console.log("selectm ", selectm);
+        console.log("selectMWArray ", selectMWArray);
+        console.log("[", index, "] :", ArrayData[index]);
+        if (ArrayData[index] !== selectm.value) {
+            console.log("Respuesta Incorrecta", index);
+        } else {
+            console.log(contCorrect);
+            contCorrect++;
+        }
+    });
+    totalCalif = (contCorrect / tamRes) * 10;
+
+    console.log(selectMWArray);
+    calificacionMV = "Calificación: " + totalCalif;
+    if (totalCalif <= 5) {
+        alert("Mal, sigue estudiando! ");
+    } else if (totalCalif <= 7) {
+        alert("Casi lo logras, sigue estudiando! ");
+    } else if (totalCalif <= 9) {
+        alert("Estás cerca de lograrlo, sigue estudiando!");
+    } else if (totalCalif === 10) {
+        alert("Excelente!");
+        calificacion++;
+    }
+    //Aquí le pasamos la información de "calificacionMV" a nuestro elemento <p id="calificacion"></p>
+    document.getElementById("calificacion").innerHTML = calificacionMV;
+      
+      
         console.log(tam.length);
         prom = (calificacion * 10) / tam.length;
         this.setState({
@@ -201,14 +286,6 @@ class Muestra extends React.Component{
   
   .then(str => (new  window.DOMParser()).parseFromString(str, "text/xml"))
   .then(data => {
-      var title, txt, res, tamRes, selMV, AuxData, auxSelect, finalMV, calificacionMV;
-        var ArrayData = [];
-        var RandList = [];
-        var auxSelectArray = [];
-        var selectMWArray = [];
-        var quizQ = "";
-        var tama = "";
-        var m = "";
      var num_preg = parseInt(document.getElementById("numExam").value,10);
      console.log(num_preg);
      
@@ -292,7 +369,6 @@ class Muestra extends React.Component{
         //y element cada select guardado previamente en auxSelectArray
         finalMV += i + 1 + element + "<br>";
     });
-    finalMV += "<br><button onClick='Contestar()' class='btn-ghost round'>Contestar</button>";
     //Aquí le pasamos la información de "finalMV" a nuestro elemento <p id="final"></p>
     document.getElementById("final").innerHTML = finalMV;
   });
@@ -319,14 +395,6 @@ class Muestra extends React.Component{
   
   .then(str => (new  window.DOMParser()).parseFromString(str, "text/xml"))
   .then(data => {
-      var title, txt, res, tamRes, selMV, AuxData, auxSelect, finalMV, calificacionMV;
-        var ArrayData = [];
-        var RandList = [];
-        var auxSelectArray = [];
-        var selectMWArray = [];
-        var quizQ = "";
-        var tama = "";
-        var m = "";
      var num_preg = parseInt(document.getElementById("numExam").value,10);
      console.log(num_preg);
      
@@ -410,7 +478,6 @@ class Muestra extends React.Component{
         //y element cada select guardado previamente en auxSelectArray
         finalMV += i + 1 + element + "<br>";
     });
-    finalMV += "<br><button onClick='Contestar()' class='btn-ghost round'>Contestar</button>";
     //Aquí le pasamos la información de "finalMV" a nuestro elemento <p id="final"></p>
     document.getElementById("final").innerHTML = finalMV;
   });
@@ -432,14 +499,6 @@ class Muestra extends React.Component{
   
   .then(str => (new  window.DOMParser()).parseFromString(str, "text/xml"))
   .then(data => {
-      var title, txt, res, tamRes, selMV, AuxData, auxSelect, finalMV, calificacionMV;
-        var ArrayData = [];
-        var RandList = [];
-        var auxSelectArray = [];
-        var selectMWArray = [];
-        var quizQ = "";
-        var tama = "";
-        var m = "";
      var num_preg = parseInt(document.getElementById("numExam").value,10);
      console.log(num_preg);
      
@@ -523,7 +582,6 @@ class Muestra extends React.Component{
         //y element cada select guardado previamente en auxSelectArray
         finalMV += i + 1 + element + "<br>";
     });
-    finalMV += "<br><button onClick='Contestar()' class='btn-ghost round'>Contestar</button>";
     //Aquí le pasamos la información de "finalMV" a nuestro elemento <p id="final"></p>
     document.getElementById("final").innerHTML = finalMV;
   });
@@ -546,14 +604,6 @@ class Muestra extends React.Component{
   .then(str => (new  window.DOMParser()).parseFromString(str, "text/xml"))
   .then(data => {
       
-      var title, txt, res, tamRes, selMV, AuxData, auxSelect, finalMV, calificacionMV;
-        var ArrayData = [];
-        var RandList = [];
-        var auxSelectArray = [];
-        var selectMWArray = [];
-        var quizQ = "";
-        var tama = "";
-        var m = "";
      var num_preg = parseInt(document.getElementById("numExam").value,10);
      console.log(num_preg);
      
@@ -637,7 +687,6 @@ class Muestra extends React.Component{
         //y element cada select guardado previamente en auxSelectArray
         finalMV += i + 1 + element + "<br>";
     });
-    finalMV += "<br><button onClick='Contestar()' class='btn-ghost round'>Contestar</button>";
     //Aquí le pasamos la información de "finalMV" a nuestro elemento <p id="final"></p>
     document.getElementById("final").innerHTML = finalMV;
   });
@@ -661,6 +710,7 @@ class Muestra extends React.Component{
                 <button onClick={this.siguiente} class='btn-ghost round'>Siguiente</button>
                 <button onClick={this.atras} class='btn-ghost round'>Atras</button>
                 <button onClick={this.alfinale} class='btn-ghost round'>Final</button>
+                <br/><p id="calificacion"></p>
                         <Counter display={this.state.count}/>
             </div>
             
@@ -735,3 +785,13 @@ ReactDOM.render (<Muestra />,document.getElementById('muestra'));
  var tam = new Array();
  var preguntaActual = 0;
  var calificacion = 0;
+ var prom = 0;
+ 
+      var title, txt, res, tamRes, selMV, AuxData, auxSelect, finalMV, calificacionMV;
+        var ArrayData = [];
+        var RandList = [];
+        var auxSelectArray = [];
+        var selectMWArray = [];
+        var quizQ = "";
+        var tama = "";
+        var m = "";
