@@ -67,7 +67,8 @@ class Component extends React.Component {
                     console.log(index, randNum, i);
                     var aux1 = RandList[i]; //aux1, toma el valor[i] del arreglo de números random, y nos da un número de 0 a n
                     var auxS = ArrayData[aux1]; //auxS, toma el valor[aux1] del arreglo de la información obtenida en cada input
-                    auxSelect += "<option value='" + aux1 + "'>" + auxS + "</option>";
+                    //Esta línea es importante ya que de ahí sacaremos el valor para el arreglo de las respuestas... 
+                    auxSelect += "<option value='" + auxS + "'>" + auxS + "</option>";
                 })
                 auxSelect += "</select>";
                 //auxSelectArray, es un arreglo porque necesitamos que todos los select, tengan un orden diferente en sus opciones
