@@ -10,8 +10,28 @@ const s2 = {
 class Component extends React.Component{
     constructor(props){
         super(props);
+        this.state={
+            nombres: []
+        }
        
         this.myFunction= this.myFunction.bind(this);
+    }
+    
+     componentWillMount(){
+          fetch('medios.xml')//CAMBIAR DEPENDIENDO DEL SERVIDOR
+            .then(response => response.text())
+            .then(str => (new  window.DOMParser()).parseFromString(str, "text/xml"))
+            .then(data => {
+                var lista = data.getElementsByTagName("medio");
+                for (var i =0 ;i < lista.length;i++){
+                    names.push(lista[i].textContent);
+                }
+                console.log(names);
+                this.setState ({
+                    nombres : names
+                })
+                         
+            });
     }
     
     myFunction() {
@@ -58,13 +78,24 @@ class Component extends React.Component{
 
     <p id="calificacion"></p>
     <br/><br/><input type='submit' value='Guardar' class='btn-ghost round'/>
+          <select class='btn-ghost round' id="sel" name="sel">
+                 <option>
+                    seleccione multimedio ...
+                    </option>
+                 {this.state.nombres.map((item,i) =>(<option key={i} value={item}>{item}</option>))}
+            </select>
+        
     </form>
     <br/><br/><button onClick={this.myFunction} class='btn-ghost round'>Siguiente</button>
+         
+            
+            
+            
                 </div>
         
         );
     }
 }
 ReactDOM.render (<Component />,document.getElementById('c'));
-
+var names = new Array();
     

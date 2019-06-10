@@ -2,7 +2,14 @@
 "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
 "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
+
+
+
     <include file="example.xml"/>
+    <constant name="struts.multipart.saveDir" value="http://localhost:8080/Proyecto_WAD_Struts-React/media" />
+  <constant name="struts.multipart.maxSize" value="15000000"/>
+   
+  
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default">
     </package>
@@ -60,10 +67,8 @@
         </action>
         		<action name="Upload" class="actionsupportpackage.Upload">
                    <interceptor-ref name="fileUpload">
-                    <param name="maximumSize">2097152</param>
-                    <param name="allowedTypes">
-                    image/png,image/gif,image/jpeg,image/pjpeg
-                    </param>
+                    <param name="maximumSize">50000000</param>
+                 
                    </interceptor-ref>
                 <interceptor-ref name="defaultStack"></interceptor-ref>                 
         	<result name="exitoso">/profesor.jsp</result>

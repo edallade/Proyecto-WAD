@@ -23,7 +23,7 @@ public class guardaSeq extends ActionSupport {
         String xml = request.getSession().getServletContext().getRealPath("/");
         String name = request.getParameter("txt");
         String texto = request.getParameter("txt2");
-
+        String sel = request.getParameter("sel");
         //recuperar parametros del formulario de creacion de la preguta
         System.out.println(name);
         System.out.println(texto);
@@ -59,11 +59,13 @@ public class guardaSeq extends ActionSupport {
             pregunta.setAttribute("tipo", "2");
             Element nombre = new Element("nombre");
             Element text = new Element("texto");
+              Element media = new Element("media");
             nombre.setText(name);
             text.setText(texto);
             pregunta.addContent(nombre);
             pregunta.addContent(text);
-
+             media.setText(sel);
+            pregunta.addContent(media);
             XMLOutputter xmlo = new XMLOutputter();
 
             try (FileWriter fw = new FileWriter(RealPath)) {

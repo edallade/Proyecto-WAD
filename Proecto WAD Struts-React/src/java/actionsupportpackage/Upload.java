@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import org.apache.struts2.ServletActionContext;
+import org.apache.struts2.interceptor.*;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
@@ -37,7 +38,7 @@ public class Upload extends ActionSupport
         {
             e.printStackTrace();
             addActionError(e.getMessage());
-            return "error";
+            System.out.println("errrrrooooooooooooooooooooooooor");
         }
            SAXBuilder builder = new SAXBuilder();
 

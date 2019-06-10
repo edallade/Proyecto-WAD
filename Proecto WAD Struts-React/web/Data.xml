@@ -1,68 +1,72 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Data>
-  <examenes/>
+  <examenes />
   <pregunta idpreg="1" tipo="1">
-    <nombre>prueba</nombre>
-    <texto>pimpon es un &amp; muy &amp;</texto>
+    <nombre>video</nombre>
+    <texto>animal &amp;</texto>
+    <media>oso.mp4</media>
     <grupo idgroup="1">
       <opciones>
-        <op>muñeco</op>
-        <op>tigre</op>
         <op>oso</op>
-        <op>niño</op>
-      </opciones>
-    </grupo>
-    <grupo idgroup="2">
-      <opciones>
-        <op>grande</op>
-        <op>chico</op>
-        <op>latoso</op>
-        <op>pequeño</op>
+        <op>tigre</op>
+        <op>leon</op>
+        <op>perro</op>
       </opciones>
     </grupo>
   </pregunta>
   <pregunta idpreg="2" tipo="1">
-    <nombre>hola</nombre>
-    <texto>jaja &amp; as &amp; jajaja</texto>
+    <nombre>audio</nombre>
+    <texto>quien canta esta cancion &amp;</texto>
+    <media>ZZ Top - La Grange.mp3</media>
     <grupo idgroup="1">
       <opciones>
-        <op>1</op>
-        <op>2</op>
-        <op>3</op>
-        <op>4</op>
-      </opciones>
-    </grupo>
-    <grupo idgroup="2">
-      <opciones>
-        <op>5</op>
-        <op>6</op>
-        <op>7</op>
-        <op>8</op>
+        <op>zz top</op>
+        <op>maluma</op>
+        <op>bad bunny</op>
+        <op>shakira</op>
       </opciones>
     </grupo>
   </pregunta>
-  <quiz quizID="1">
-    <name>Said</name>
+  <pregunta idpreg="3" tipo="1">
+    <nombre>imagen</nombre>
+    <texto>metro &amp;</texto>
+    <media>pp.jpg</media>
+    <grupo idgroup="1">
+      <opciones>
+        <op>amarillo</op>
+        <op>2</op>
+        <op>sss</op>
+        <op>aaa</op>
+      </opciones>
+    </grupo>
+  </pregunta>
+  <quiz quizID="1" teacherID="2">
+    <name>multimedios</name>
     <testID>1</testID>
     <testID>2</testID>
     <testID>3</testID>
   </quiz>
-  <quiz quizID="2" teacherID="2">
-    <name>Alexillo</name>
-    <testID>1</testID>
-  </quiz>
-  <quiz quizID="3" teacherID="2">
-    <name>Alexis</name>
-    <testID>3</testID>
-  </quiz>
-  <quiz quizID="4" teacherID="2">
-    <name>Ejemplo</name>
-    <testID>1</testID>
-    <testID>2</testID>
-    <testID>3</testID>
-  </quiz>
-  <pregunta idpreg="4" tipo="2">
-    <nombre>Hola</nombre>
-    <texto>Hola esto es un ejemplo Alex Said otra cosa WAD Ejemplo</texto>
+  <pregunta idpreg="4" tipo="1">
+    <nombre>escudo</nombre>
+    <texto>es el escudo de &amp;</texto>
+    <media>escom.png</media>
+    <grupo idgroup="1">
+      <opciones>
+        <op>escom</op>
+        <op>upiita</op>
+        <op>est</op>
+        <op>esfm</op>
+      </opciones>
+    </grupo>
+  </pregunta>
+  <pregunta idpreg="5" tipo="2">
+    <nombre>prueba sequenci</nombre>
+    <texto>uno dos tres cuatro</texto>
+    <media>tabla merge.png</media>
+  </pregunta>
+  <pregunta idpreg="6" tipo="2">
+    <nombre>sec video</nombre>
+    <texto>el oso es baboso</texto>
+    <media>oso.mp4</media>
   </pregunta>
 </Data>

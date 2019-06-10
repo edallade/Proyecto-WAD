@@ -43,10 +43,11 @@
             </ul>
         </div><br><br><br><br>
         <!---------------------------MENÚ----------------------------->
-
+ <div id="media"></div>
         <div id="app">
 
         </div>
+       
         <script type="text/babel" src="verSeq.jsx"></script>    </body>
     <input type="text" value="<%=idRef%>" hidden="true" id="numPreg"/>
 </html>

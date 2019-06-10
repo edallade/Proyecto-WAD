@@ -31,10 +31,12 @@ public class guardaPreg extends ActionSupport {
         String xml = request.getSession().getServletContext().getRealPath("/");
         String name = request.getParameter("txt");
         String texto = request.getParameter("txt2");
+        String sel = request.getParameter("sel");
         
         //recuperar parametros del formulario de creacion de la preguta
         System.out.println(name);
         System.out.println(texto);
+        System.out.println(sel+"aaaaaaaaaaaaaaaaaaaaa");
         //contCaracteres regresa el numero de palabras faltantes denotadas por cada "&"
         
         cont = contCaracteres(texto,"&");
@@ -79,10 +81,13 @@ public class guardaPreg extends ActionSupport {
             pregunta.setAttribute("tipo","1");
             Element nombre = new Element("nombre");
             Element text = new Element("texto");
+            Element media = new Element("media");
             nombre.setText(name);
             text.setText(texto);
+            media.setText(sel);
             pregunta.addContent(nombre);
             pregunta.addContent(text);
+            pregunta.addContent(media);
             for(int i = 1 ;i<=cont;i++){
                 Element grupo = new Element("grupo");
                 Element opciones = new Element("opciones");
