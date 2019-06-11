@@ -6,7 +6,7 @@
 
 
     <include file="example.xml"/>
-    <constant name="struts.multipart.saveDir" value="http://localhost:8080/Proyecto_WAD_Struts-React/media" />
+    <constant name="struts.multipart.saveDir" value="/media" />
     <constant name="struts.multipart.maxSize" value="15000000"/>
    
   
