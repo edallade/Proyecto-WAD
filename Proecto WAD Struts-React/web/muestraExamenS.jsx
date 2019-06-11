@@ -55,7 +55,10 @@ class Muestra extends React.Component{
           console.log(tam[0].textContent);
          }
     }
-     
+     for(var j = 0; j < tam.length; j++){
+         preguntasRes[j] = 0;
+     }
+     console.log(preguntasRes);
      var tests = data.getElementsByTagName("pregunta");
     for (var j = 0; j < tests.length; j++) {
         if (tests[j].getAttribute("idpreg") === tam[0].textContent) {
@@ -195,7 +198,13 @@ class Muestra extends React.Component{
         alert("Estás cerca de lograrlo, sigue estudiando!");
     } else if (totalCalif === 10) {
         alert("Excelente!");
-        calificacion++;
+        if(preguntasRes[preguntaActual] === 0){
+            calificacion++;
+            preguntasRes[preguntaActual] = 1;
+            console.log(preguntasRes);
+        }
+        else
+         alert("Ya has acertado esta pregunta");
     }
     //Aquí le pasamos la información de "calificacionMV" a nuestro elemento <p id="calificacion"></p>
     document.getElementById("calificacion").innerHTML = calificacionMV;
@@ -255,7 +264,14 @@ class Muestra extends React.Component{
         alert("Estás cerca de lograrlo, sigue estudiando!");
     } else if (totalCalif === 10) {
         alert("Excelente!");
-        calificacion++;
+        console.log(preguntasRes[preguntaActual]);
+        if(preguntasRes[preguntaActual] === 0){
+            calificacion++;
+            preguntasRes[preguntaActual] = 1;
+            console.log(preguntasRes);
+        }
+        else
+         alert("Ya has acertado esta pregunta");
     }
     //Aquí le pasamos la información de "calificacionMV" a nuestro elemento <p id="calificacion"></p>
     document.getElementById("calificacion").innerHTML = calificacionMV;
@@ -786,6 +802,7 @@ ReactDOM.render (<Muestra />,document.getElementById('muestra'));
  var preguntaActual = 0;
  var calificacion = 0;
  var prom = 0;
+ var preguntasRes = new Array() ;
  
       var title, txt, res, tamRes, selMV, AuxData, auxSelect, finalMV, calificacionMV;
         var ArrayData = [];

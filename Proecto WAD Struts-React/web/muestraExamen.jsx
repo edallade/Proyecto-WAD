@@ -60,6 +60,9 @@ class Muestra extends React.Component{
           tam = tests[j].getElementsByTagName("testID");
          }
     }
+        for(var j = 0; j < tam.length; j++){
+         preguntasRes[j] = 0;
+     }
       num_preg = tam[0].textContent;
       var opts;
       var text_array;
@@ -135,7 +138,13 @@ class Muestra extends React.Component{
       console.log(seleccionadas);
       if(auxState===true){
             alert("correcto");
-        calificacion++;
+        if(preguntasRes[preguntaActual] === 0){
+            calificacion++;
+            preguntasRes[preguntaActual] = 1;
+            console.log(preguntasRes);
+        }
+        else
+         alert("Ya has acertado esta pregunta");
         
         }
       else{ 
@@ -561,3 +570,4 @@ ReactDOM.render (<Muestra />,document.getElementById('muestra'));
  var tam = new Array();
  var preguntaActual = 0;
  var calificacion = 0;
+ var preguntasRes = new Array() ;
